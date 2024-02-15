@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* default: light */
+        --background-color-primary: #ffffff;
+        --background-color-secondary: #fafafa;
+        --background-color-card-company-icon: #e4e4e7;
+        --color-text-primary: #000000;
+        --color-text-secondary: #52525b;
+        --color-text-hover: theme(colors.blue.400);
+        /* nav */
+        --border-color-nav: #ffffff;
+        --border-color-nav-border: #f4f4f5; /*#ededed;*/
+        --border-color-card-border: #f4f4f5;
+        --border-color-card-company-icon: #e4e4e7;
+        /* button */
+        --background-color-button-filled: theme(colors.zinc.200);
+        --background-color-button-outlined: theme(colors.white);
+        --background-color-button-inverted: theme(colors.zinc.800);
+        --background-color-button-filled-hover: theme(colors.zinc.100);
+        --background-color-button-outlined-hover: theme(colors.zinc.800);
+        --background-color-button-inverted-hover: theme(colors.zinc.700);
+        --border-color-button-filled: theme(colors.zinc.200);
+        --border-color-button-outlined: theme(colors.zinc.800);
+        --border-color-button-inverted: theme(colors.zinc.800);
+        --border-color-button-filled-hover: theme(colors.zinc.100);
+        --border-color-button-outlined-hover: theme(colors.zinc.800);
+        --border-color-button-inverted-hover: theme(colors.zinc.700);
+        --color-text-button-filled: var(--color-text-primary);
+        --color-text-button-outlined: var(--color-text-primary);
+        --color-text-button-inverted: theme(colors.white);
+        --color-text-button-filled-hover: var(--color-text-primary);
+        --color-text-button-outlined-hover: theme(colors.white);
+        --color-text-button-inverted-hover: theme(colors.white);
+
+        /* modal */
+        --background-color-modal-primary: var(--background-color-primary);
+        --background-color-modal-secondary: theme(colors.zinc.100);
+        --background-color-modal-hover: theme(colors.zinc.100);
+        --border-color-modal-date: theme(colors.zinc.600);
+        --color-text-modal-link: theme(colors.blue.400);
+        --color-text-modal-link-hover: theme(colors.blue.300);
+        --color-text-modal-date: theme(colors.zinc.600);
+
+    }
+    /* If the user switchs light mode */
+    :root[data-theme="light"] {
+        --background-color-primary: #ffffff;
+        --background-color-secondary: #fafafa;
+        --background-color-inverted: #f4f4f5;
+        --background-color-card-company-icon: #e4e4e7;
+        --color-text-primary: #000000;
+        --color-text-secondary: #52525b;
+        --color-text-hover: #60a5fa;
+        /* nav */
+        --border-color-nav: #ffffff;
+        --border-color-nav-border: #f4f4f5;
+        --border-color-card-border: #f4f4f5;
+        --border-color-card-company-icon: #e4e4e7;
+        /* button */
+        --background-color-button-filled: theme(colors.zinc.200);
+        --background-color-button-outlined: theme(colors.white);
+        --background-color-button-inverted: theme(colors.zinc.800);
+        --background-color-button-filled-hover: theme(colors.zinc.100);
+        --background-color-button-outlined-hover: theme(colors.zinc.800);
+        --background-color-button-inverted-hover: theme(colors.zinc.700);
+        --border-color-button-filled: theme(colors.zinc.200);
+        --border-color-button-outlined: theme(colors.zinc.800);
+        --border-color-button-inverted: theme(colors.zinc.800);
+        --border-color-button-filled-hover: theme(colors.zinc.100);
+        --border-color-button-outlined-hover: theme(colors.zinc.800);
+        --border-color-button-inverted-hover: theme(colors.zinc.700);
+        --color-text-button-filled: var(--color-text-primary);
+        --color-text-button-outlined: var(--color-text-primary);
+        --color-text-button-inverted: theme(colors.white);
+        --color-text-button-filled-hover: var(--color-text-primary);
+        --color-text-button-outlined-hover: theme(colors.white);
+        --color-text-button-inverted-hover: theme(colors.white);
+
+        /* modal */
+        --background-color-modal-primary: var(--background-color-primary);
+        --background-color-modal-secondary: theme(colors.zinc.100);
+        --background-color-modal-hover: theme(colors.zinc.100);
+        --border-color-modal-date: theme(colors.zinc.600);
+        --color-text-modal-link: theme(colors.blue.400);
+        --color-text-modal-link-hover: theme(colors.blue.300);
+        --color-text-modal-date: theme(colors.zinc.600);
+    }
+    /* Dark Theme */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background-color-primary: theme(colors.zinc.800);
+            --background-color-secondary: theme(colors.zinc.900);
+            --background-color-inverted: #f4f4f5;
+            --background-color-card-company-icon: #27272a;
+            --color-text-primary: #f4f4f5;
+            --color-text-secondary: #a1a1aa; 
+            --color-text-hover: #60a5fa;
+            /* nav */
+            --border-color-nav: #27272a;
+            --border-color-nav-border: #3f3f46;
+            --border-color-card-border: #3f3f46;
+            --border-color-card-company-icon: #3f3f46;
+            /* button */
+            --background-color-button-filled: theme(colors.zinc.700);
+            --background-color-button-outlined: theme(colors.zinc.200);
+            --background-color-button-inverted: theme(colors.zinc.800);
+            --background-color-button-filled-hover: theme(colors.zinc.600);
+            --background-color-button-outlined-hover: theme(colors.zinc.100);
+            --background-color-button-inverted-hover: theme(colors.zinc.700);
+            --border-color-button-filled: theme(colors.zinc.700);
+            --border-color-button-outlined: theme(colors.zinc.200);
+            --border-color-button-inverted: theme(colors.zinc.700);
+            --border-color-button-filled-hover: theme(colors.zinc.600);
+            --border-color-button-outlined-hover: theme(colors.zinc.100);
+            --border-color-button-inverted-hover: theme(colors.zinc.700);
+            --color-text-button-filled: theme(colors.white);
+            --color-text-button-outlined: theme(colors.black);
+            --color-text-button-inverted: var(--color-text-primary);
+            --color-text-button-filled-hover: theme(colors.white);
+            --color-text-button-outlined-hover: theme(colors.black);
+            --color-text-button-inverted-hover: var(--color-text-primary);
+
+            /* modal */
+            --background-color-modal-primary: var(--background-color-primary);
+            --background-color-modal-secondary: theme(colors.zinc.900);
+            --background-color-modal-hover: theme(colors.zinc.700);
+            --border-color-modal-date: theme(colors.zinc.400);
+            --color-text-modal-link: theme(colors.blue.400);
+            --color-text-modal-link-hover: theme(colors.blue.300);
+            --color-text-modal-date: theme(colors.zinc.400);
+        }
+    } 
+    :root[data-theme="dark"]{
+        --background-color-primary: theme(colors.zinc.800);
+        --background-color-secondary: theme(colors.zinc.900);
+        --background-color-inverted: #f4f4f5;
+        --background-color-card-company-icon: #27272a;
+        --color-text-primary: #f4f4f5;
+        --color-text-secondary: #a1a1aa; 
+        --color-text-hover: #60a5fa;
+        /* nav */
+        --border-color-nav: #27272a;
+        --border-color-nav-border: #3f3f46;
+        --border-color-card-border: #3f3f46;
+        --border-color-card-company-icon: #3f3f46;
+        /* button */
+        --background-color-button-filled: theme(colors.zinc.700);
+        --background-color-button-outlined: theme(colors.zinc.200);
+        --background-color-button-inverted: theme(colors.zinc.800);
+        --background-color-button-filled-hover: theme(colors.zinc.600);
+        --background-color-button-outlined-hover: theme(colors.zinc.100);
+        --background-color-button-inverted-hover: theme(colors.zinc.700);
+        --border-color-button-filled: theme(colors.zinc.700);
+        --border-color-button-outlined: theme(colors.zinc.200);
+        --border-color-button-inverted: theme(colors.zinc.800);
+        --border-color-button-filled-hover: theme(colors.zinc.600);
+        --border-color-button-outlined-hover: theme(colors.zinc.100);
+        --border-color-button-inverted-hover: theme(colors.zinc.700);
+        --color-text-button-filled: theme(colors.white);
+        --color-text-button-outlined: theme(colors.black);
+        --color-text-button-inverted: var(--color-text-primary);
+        --color-text-button-filled-hover: theme(colors.white);
+        --color-text-button-outlined-hover: theme(colors.black);
+        --color-text-button-inverted-hover: var(--color-text-primary);
+
+        /* modal */
+        --background-color-modal-primary: var(--background-color-primary);
+        --background-color-modal-secondary: theme(colors.zinc.900);
+        --background-color-modal-hover: theme(colors.zinc.700);
+        --border-color-modal-date: theme(colors.zinc.400);
+        --color-text-modal-link: theme(colors.blue.400);
+        --color-text-modal-link-hover: theme(colors.blue.300);
+        --color-text-modal-date: theme(colors.zinc.400);
+    }
+}
+

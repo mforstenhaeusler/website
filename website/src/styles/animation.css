@@ -1,0 +1,154 @@
+.animation-container {
+    height: 600px;
+    /*background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;*/
+}
+
+.python {
+    animation: orbitPython 25s linear infinite;
+
+}
+
+.pytorch {
+    animation: orbitPyTorch 25s linear infinite;
+
+}
+
+.tensorflow {
+    animation: orbitTensorflow 25s linear infinite;
+}
+
+.django {
+    animation: orbitDjango 25s linear infinite;
+}
+.numpy {
+    animation: orbitNumpy 25s linear infinite;
+}
+.pandas {
+    animation: orbitPandas 25s linear infinite;
+}
+
+.js{
+    animation: orbitJS 20s linear infinite;
+}
+.nextjs {
+    animation: orbitNextjs 20s linear infinite;
+}
+.tailwind {
+    animation: orbitTailwind 20s linear infinite;
+}
+.typescript {
+    animation: orbitTypescript 20s linear infinite;
+}
+
+
+/* Orbit Animation */
+@keyframes orbitPython {
+    0% {
+      transform: rotate(0deg) translateX(50%) rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg) translateX(50%) rotate(-360deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitPyTorch {
+    0% {
+      transform: rotate(-60deg) translateX(50%) rotate(60deg);
+    }
+  
+    100% {
+      transform: rotate(300deg) translateX(50%) rotate(-300deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitTensorflow {
+    0% {
+      transform: rotate(-120deg) translateX(50%) rotate(120deg);
+    }
+  
+    100% {
+      transform: rotate(240deg) translateX(50%) rotate(-240deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitDjango {
+    0% {
+      transform: rotate(-180deg) translateX(50%) rotate(180deg);
+    }
+  
+    100% {
+      transform: rotate(180deg) translateX(50%) rotate(-180deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitNumpy {
+    0% {
+      transform: rotate(-240deg) translateX(50%) rotate(240deg);
+    }
+  
+    100% {
+      transform: rotate(120deg) translateX(50%) rotate(-120deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitPandas {
+    0% {
+      transform: rotate(-300deg) translateX(50%) rotate(300deg);
+    }
+  
+    100% {
+      transform: rotate(60deg) translateX(50%) rotate(-60deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitJS{
+    0% {
+      transform: rotate(0deg) translateX(50%) rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(-360deg) translateX(50%) rotate(360deg);
+    }
+}
+
+/* Orbit Animation */
+@keyframes orbitTypescript {
+    0% {
+      transform: rotate(90deg) translateX(50%) rotate(-90deg);
+    }
+    
+    100% {
+        transform: rotate(-270deg) translateX(50%) rotate(270deg);
+    } 
+}
+
+/* Orbit Animation */
+@keyframes orbitNextjs{
+    0% {
+      transform: rotate(180deg) translateX(50%) rotate(-180deg);
+    }
+    
+    100% {
+      transform: rotate(-180deg) translateX(50%) rotate(180deg);
+    }
+    
+}
+
+/* Orbit Animation */
+@keyframes orbitTailwind {
+    0% {
+      transform: rotate(270deg) translateX(50%) rotate(-270deg);
+    }
+      
+    100% {
+      transform: rotate(-90deg) translateX(50%) rotate(90deg);
+    }
+}

@@ -5,6 +5,7 @@ import "../../globals.css";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"; 
 import { MdEmail, MdMacroOff, MdMail } from "react-icons/md";
 import { SiBmw } from "react-icons/si";
+import Image from "next/image";
 
 
 const About: React.FC = () => {
@@ -42,6 +43,7 @@ const About: React.FC = () => {
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lastScrollTop]);
 
     return (
@@ -61,7 +63,7 @@ const About: React.FC = () => {
                         data-nimg="1" 
                         className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800" 
                         sizes="(min-width: 1024px) 32rem, 20rem" 
-                        srcSet="/headshot/IMG_0443.jpeg" 
+                        src="/headshot/IMG_0443.jpeg" 
                         style={{ color: "transparent"}}
                       />
                     </div>
@@ -71,21 +73,22 @@ const About: React.FC = () => {
                       Hi, I am Max.
                     </h1>
                     <div className="mt-6 space-y-7 text-base text-secondary">
-                      <p>I grew up in Southern Germany, where my enthusiasm for both sports and academics has been ingrained in me since childhood. I began swimming 🏊‍♂️ and playing football ⚽️ at an early age. In ninth grade, I had the opportunity to enroll in a boarding school in England, marking my first experience living abroad and also completing my GCSE's.</p>
+                      <p>I grew up in Southern Germany, where my enthusiasm for both sports and academics has been ingrained in me since childhood. I began swimming 🏊‍♂️ and playing football ⚽️ at an early age. In ninth grade, I had the opportunity to enroll in a boarding school in England, marking my first experience living abroad and also completing my GCSE&apos;s.</p>
                       <p className="">Afterwards, I returned to Germany to obtain my German High School degree (Abitur). By that time, I had discontinued football and dedicated myself entirely to swimming as my extracurricular pursuit. In 2015, I earned a spot on the 
                       <a 
                         className="transition hover:text-hover cursor-pointer" 
                         href="https://www.teamdeutschland.de/team/details/maximilian-forstenhaeusler"
                         target="_blank"  
                       > Junior National Team <img
+                            alt=""
                             src="logos/Team_Deutschland_logo.png"
                             className="inline h-10 aspect-[5/10] text-secondary"
                           >
                           </img>
                       </a> and participated in the inaugural European Games held in Baku.</p>
-                      <p>Following to the Abitur, I was fortunate to receive an opportunity to relocate to Washington D.C. to pursue both my passion for swimming and academic at the <a className="transition hover:text-hover cursor-pointer" href="https://www.gwu.edu/" target="_blank">George Washington University</a>. There, I pursued a Bachelor's degree in Mechanical Engineering (B.Sc.) while actively participating in the Division I Swimming and Diving Team.</p>
-                      <p>After earning my Bachelor's Degree in 2020, I commenced my graduate studies at the <a className="transition hover:text-hover cursor-pointer" href="https://www.tum.de/" target="_blank">Technical University of Munich</a>. In 2023, I successfully obtained a Master of Science degree from the School of Computation, Information, and Technology. Concurrently with my studies, I held a part-time position at <a className="transition hover:text-hover cursor-pointer" href="https://www.bmw.com" target="_blank">BMW <SiBmw className="inline h-5 w-5"></SiBmw></a>, concentrating on digitalizing engineering research, development, and production processes using machine learning and deep learning techniques.</p>
-                      <p>Additionally, I actively participated in Germany's largest student organization focused on artificial intelligence, initially leading and now mentoring the software development of web and cloud-based applications. Upon completing my coursework, I transitioned to a role as a visiting Researcher at the <a className="transition hover:text-hover cursor-pointer" href="https://www.caltech.edu" target="_blank"/> California Institute of Technology <a/> in Pasadena. During my tenure, I conducted research on physics-informed geometric deep learning and composed my Master's thesis.</p>
+                      <p>Following to the Abitur, I was fortunate to receive an opportunity to relocate to Washington D.C. to pursue both my passion for swimming and academic at the <a className="transition hover:text-hover cursor-pointer" href="https://www.gwu.edu/" target="_blank">George Washington University</a>. There, I pursued a Bachelor&apos;s degree in Mechanical Engineering (B.Sc.) while actively participating in the Division I Swimming and Diving Team.</p>
+                      <p>After earning my Bachelor&apos;s Degree in 2020, I commenced my graduate studies at the <a className="transition hover:text-hover cursor-pointer" href="https://www.tum.de/" target="_blank">Technical University of Munich</a>. In 2023, I successfully obtained a Master of Science degree from the School of Computation, Information, and Technology. Concurrently with my studies, I held a part-time position at <a className="transition hover:text-hover cursor-pointer" href="https://www.bmw.com" target="_blank">BMW <SiBmw className="inline h-5 w-5"></SiBmw></a>, concentrating on digitalizing engineering research, development, and production processes using machine learning and deep learning techniques.</p>
+                      <p>Additionally, I actively participated in Germany&apos;s largest student organization focused on artificial intelligence, initially leading and now mentoring the software development of web and cloud-based applications. Upon completing my coursework, I transitioned to a role as a visiting Researcher at the <a className="transition hover:text-hover cursor-pointer" href="https://www.caltech.edu" target="_blank"/> California Institute of Technology <a/> in Pasadena. During my tenure, I conducted research on physics-informed geometric deep learning and composed my Master&apos;s thesis.</p>
                       <p>I am a very open-minded person and eager to learn and expand my knowledge about artifical intelligence, machine learning, data anlytics and its applications.</p>
                     </div>
                   </div>
@@ -125,7 +128,7 @@ const About: React.FC = () => {
                           src="logos/Team_Deutschland_logo.png"
                           className="h-12 aspect-[5/10] mr-4"
                         >
-                        </img>
+                        </Image>
                         Team Deutschland
                       </a>
     </li>*/}

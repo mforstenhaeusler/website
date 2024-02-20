@@ -5,7 +5,7 @@ import { BriefcaseIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import Button from './button';
 import { useTheme } from 'next-themes';
 import IconLink from './iconLink';
-
+import Image from 'next/image';
 
 
 type CardProps = {

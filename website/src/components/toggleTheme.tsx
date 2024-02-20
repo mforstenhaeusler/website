@@ -75,12 +75,13 @@ const ToggleTheme: React.FC<ThemeToogleProps> = ({
       document.documentElement.classList.remove('dark')
     }
   } 
-  console.log(document.documentElement.classList)
-  console.log(systemTheme)
-  console.log(theme)
+  //console.log(document.documentElement.classList)
+  //console.log(systemTheme)
+  //console.log(theme)
 
   useEffect(() =>{
-    checkTheme()
+    checkTheme();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

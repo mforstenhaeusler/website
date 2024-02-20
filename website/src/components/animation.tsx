@@ -5,7 +5,7 @@ import "../styles/animation.css";
 import { FaPython } from 'react-icons/fa';
 import { SiPytorch, SiTensorflow, SiTailwindcss, SiJavascript, SiDjango, SiNextdotjs, SiTypescript, SiNumpy, SiPandas } from "react-icons/si";
 import { MdComputer } from "react-icons/md";
-
+import Image from 'next/image';
 
 type ProgrammingSkillsAnimationProps = {
     bigAnimation: string

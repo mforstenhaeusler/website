@@ -1,6 +1,8 @@
 "use client"
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { XMarkIcon, LinkIcon, DocumentIcon } from "@heroicons/react/24/solid";
+import Image from 'next/image';
+
 
 type ModalProps = {
     content: Record<string, any>;
@@ -74,8 +76,8 @@ const Modal: React.FC<ModalProps> = ({
                                         <div className='flex flex-cols items-center justify-start text-sm'>
                                             <div>Read Article</div>
                                             <div>
-                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current">
-                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 strokeLinecap">
+                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </svg> 
                                             </div>
                                         </div>
@@ -122,8 +124,8 @@ const Modal: React.FC<ModalProps> = ({
                                             {content.link !== "" ?  
                                             <a id="articleLink" href={content.link} className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
                                                 <p className="text-sm"> Full Article </p> 
-                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current">
-                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 strokeLinecap">
+                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </svg> 
                                             </a>
                                             :

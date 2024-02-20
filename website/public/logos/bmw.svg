@@ -28,7 +28,7 @@
   <desc
      id="desc6">Created with Sketch.</desc>
   <g
-     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     style="fill:none;fill-rule:evenodd;stroke:none;strokeWidth:1"
      transform="scale(1.7142857,1.7142857)"
      id="BMW-logo-grey-fallback-53px">
     <g
@@ -46,7 +46,7 @@
                  transform="translate(45.933338,1.7666669)"
                  id="g3381">
                 <g
-                   style="fill:none;fill-rule:nonzero;stroke:none;stroke-width:1"
+                   style="fill:none;fill-rule:nonzero;stroke:none;strokeWidth:1"
                    id="g3355"
                    transform="translate(-45.93334,-1.7666667)">
                   <path
@@ -56,7 +56,7 @@
                 </g>
                 <path
                    id="path21-3"
-                   style="fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:1"
+                   style="fill:#ffffff;fill-rule:nonzero;stroke:none;strokeWidth:1"
                    d="m -19.433337,9.0296313 c 8.678608,0 15.7037024,7.0250957 15.7037024,15.7037027 l -15.7037024,0 0,-15.7037027 z m -15.703705,15.7037027 15.703705,0 0,15.703702 c -8.678609,0 -15.703705,-7.025095 -15.703705,-15.703702 z" />
               </g>
             </g>

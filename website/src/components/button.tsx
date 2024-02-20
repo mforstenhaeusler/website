@@ -51,6 +51,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
           } if (variant === 'default') {
               setButtonClasses(`${className}`)
           }
+          // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
       //console.log(buttonClasses)
   //

@@ -18,6 +18,7 @@ import ArticleCard from '@/components/articleCard';
 import { Animator, Fade, FadeIn, FadeOut, ScrollContainer, ScrollPage, batch, MoveIn, Sticky, Zoom} from 'react-scroll-motion';
 import ProgrammingSkillsAnimation from '@/components/animation';
 import Modal from '@/components/modal';
+import Image from 'next/image';
 
 
 const App: React.FC = () => {
@@ -28,7 +29,7 @@ const App: React.FC = () => {
     '100%': { opacity: 1 },
   };
 
-  const headerText = "AI enthusiast, ML researcher and amatuer skier."
+  const headerText = "AI enthusiast, ML researcher and amatuer skier ⛷️."
   const subHeaderText = "I'm Max, a machine learning reseacher based in Munich 🇩🇪. \
   I currently pursue a PhD at the University of Glasgow 🏴󠁧󠁢󠁳󠁣󠁴󠁿 where I ressearch and develop technologies \
   that aim to ensure privacy in machine learning applications."
@@ -192,6 +193,7 @@ const App: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollTop]);
 
   return (

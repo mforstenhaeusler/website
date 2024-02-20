@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "../styles/slantedImages.css";
-
+import Image from 'next/image';
 
 const SlantedImages: React.FC = () => {
 
@@ -116,6 +116,7 @@ const SlantedImages: React.FC = () => {
     randomIntervalImg3();
     randomIntervalImg4();
     randomIntervalImg5();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //console.log(selectedImg1)
@@ -125,7 +126,7 @@ const SlantedImages: React.FC = () => {
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 absolute left-[-150px] right-[-150px]">
         {selectedImg1.map((image, key) => (
           <div id={image} key={key} className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-            <img 
+            <Image 
               alt={image}
               loading="eager" 
               width="3936" 
@@ -141,7 +142,7 @@ const SlantedImages: React.FC = () => {
         }
         {selectedImg2.map((image, key) => (
           <div id={image} key={key} className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-            <img 
+            <Image 
               alt={image} 
               loading="lazy" 
               width="3936" 
@@ -157,7 +158,7 @@ const SlantedImages: React.FC = () => {
         }
         {selectedImg3.map((image, key) => (
           <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-            <img 
+            <Image 
               alt={image} 
               loading="lazy" 
               width="3936" 
@@ -173,7 +174,7 @@ const SlantedImages: React.FC = () => {
         }
         {selectedImg4.map((image, key) => (
           <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-            <img 
+            <Image 
               alt={image} 
               loading="lazy" 
               width="3936" 
@@ -189,7 +190,7 @@ const SlantedImages: React.FC = () => {
         }
         {selectedImg5.map((image, key) => (
           <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-            <img 
+            <Image 
               alt={image} 
               loading="lazy" 
               width="3936" 
@@ -204,7 +205,7 @@ const SlantedImages: React.FC = () => {
         ))
         }
         {/*<div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-        <img 
+        <Image 
           alt="" 
           loading="lazy" 
           width="3936" 
@@ -217,7 +218,7 @@ const SlantedImages: React.FC = () => {
           style={{color: "transparent"}}/>
         </div>
         <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-        <img 
+        <Image 
           alt="" 
           loading="lazy" 
           width="3936" 
@@ -230,7 +231,7 @@ const SlantedImages: React.FC = () => {
           style={{color: "transparent"}}/>
         </div>
         <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-        <img 
+        <Image 
           alt="" 
           loading="lazy" 
           width="3936" 
@@ -243,7 +244,7 @@ const SlantedImages: React.FC = () => {
           style={{color: "transparent"}}/>
         </div>
         <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-        <img 
+        <Image 
           alt="" 
           loading="lazy" 
           width="3936" 
@@ -257,7 +258,7 @@ const SlantedImages: React.FC = () => {
         />
         </div>
         <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-          <img 
+          <Image 
             alt="" 
             loading="lazy" 
             width="3936" 
@@ -283,7 +284,7 @@ export default SlantedImages;
         className="-my-4 flex justify-center"
       >
         <div className="-rotate-2 w-full overflow-hidden relative">
-          <img
+          <Image
               src="https://placekitten.com/200/200"
               alt="Round Image"
               className="rounded-xl 
@@ -293,7 +294,7 @@ export default SlantedImages;
           />
         </div>
         <div className="rotate-2 w-full overflow-hidden relative">
-          <img
+          <Image
               src="https://placekitten.com/200/200"
               alt="Round Image"
               className="rounded-xl 
@@ -301,7 +302,7 @@ export default SlantedImages;
           />
         </div>
         <div className="rotate-2 w-full overflow-hidden relative">
-          <img
+          <Image
               src="https://placekitten.com/200/200"
               alt="Round Image"
               className="rounded-xl 
@@ -310,7 +311,7 @@ export default SlantedImages;
           />
         </div>
         {/*<div className="-rotate-2 w-full overflow-hidden relative">
-          <img
+          <Image
               src="https://placekitten.com/200/200"
               alt="Round Image"
               className="rounded-xl 
@@ -319,7 +320,7 @@ export default SlantedImages;
           />
         </div>
         <div className="-rotate-2 w-full overflow-hidden relative">
-          <img
+          <Image
               src="https://placekitten.com/200/200"
               alt="Round Image"
               className="rounded-xl 

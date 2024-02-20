@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ToggleTheme from "./toggleTheme";
 import {usePathname} from 'next/navigation'; 
-
+import Image from 'next/image';
 
 type NavbarProps = {
   //children: ReactNode;
@@ -26,7 +26,15 @@ const Navbar: React.FC<NavbarProps> = ({ landingPage = true}) => {
         /* bg-orange-400 */
     }
 
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+    let systemTheme;
+
+    if (typeof window !== 'undefined') {
+    // This code will only run in the browser
+    systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } else {
+    // Fallback if window is not defined (e.g., during server-side rendering)
+    systemTheme = false; // Or any default value you prefer
+    }
     //const [mediaWidth, setMediaWidth] = useState(window.innerWidth)
     //const [textUnderlineOffset, setTextUnderlineOffset] = useState(window.innerWidth)
     const textUnderlineOffset = '15px'
@@ -94,7 +102,8 @@ const Navbar: React.FC<NavbarProps> = ({ landingPage = true}) => {
     }
 
     useEffect(() => {
-        setInterval(checkScreenWidth, 1000)
+        setInterval(checkScreenWidth, 1000);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
 
@@ -183,7 +192,7 @@ const Navbar: React.FC<NavbarProps> = ({ landingPage = true}) => {
                             fill="none" 
                             viewBox="0 0 10 6"
                         >
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
                         </svg>
                     </button> 
                     <ToggleTheme className="ml-3 rounded-3xl text-primary bg-nav border border-navBorder hover:text-hover shadow-sm cursor-pointer" systemTheme={systemTheme}/>
@@ -229,7 +238,7 @@ export default Navbar;
         fill="none" 
         viewBox="0 0 10 6"
     >
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        <path stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
     </svg>
 </button> 
 {colapse ? 

@@ -5,17 +5,17 @@ import Image from 'next/image';
 const SlantedImages: React.FC = () => {
 
   
-  //const img1 = ["/images/IMG_8258.jpg", "/images/IMG_2310.jpeg", "/images/IMG_9229.jpeg", "/images/IMG_9162.jpeg"]
-  //const img2 = ["/images/20221127-IMG_4907.jpg", "/images/IMG_2135.JPG", "/images/IMG_5602.jpeg", "/images/IMG_5850.jpeg", "/images/IMG_8973.jpeg"]
-  //const img3 = ["/images/IMG_5044.jpeg", "/images/IMG_1334.jpeg", "/images/IMG_1877.jpeg", "/images/IMG_2495.jpeg", "/images/IMG_5545.jpeg", "/images/IMG_3926.jpeg"]
-  //const img4 = ["/images/IMG_9621.jpeg", "/images/IMG_9754.jpeg", "/images/IMG_2589.jpeg", "/images/IMG_5911.jpeg"]
-  //const img5 = ["/images/IMG_2777.JPG", "/images/IMG_3044.jpeg", "/images/IMG_4939.jpeg", "/images/IMG_8834.JPG", ]
+  const img1 = ["/images/IMG_8258.jpg", "/images/IMG_2310.jpeg", "/images/IMG_9229.jpeg", "/images/IMG_9162.jpeg"]
+  const img2 = ["/images/20221127-IMG_4907.jpg", "/images/IMG_2135.JPG", "/images/IMG_5602.jpeg", "/images/IMG_5850.jpeg", "/images/IMG_8973.jpeg"]
+  const img3 = ["/images/IMG_5044.jpeg", "/images/IMG_1334.jpeg", "/images/IMG_1877.jpeg", "/images/IMG_2495.jpeg", "/images/IMG_5545.jpeg", "/images/IMG_3926.jpeg"]
+  const img4 = ["/images/IMG_9621.jpeg", "/images/IMG_9754.jpeg", "/images/IMG_2589.jpeg", "/images/IMG_5911.jpeg"]
+  const img5 = ["/images/IMG_2777.JPG", "/images/IMG_3044.jpeg", "/images/IMG_4939.jpeg", "/images/IMG_8834.JPG", ]
 
-  const img1 = ["/images/IMG_8258.jpg", "/images/IMG_2310.jpeg", ]
-  const img2 = ["/images/20221127-IMG_4907.jpg", "/images/IMG_2135.JPG", ]
-  const img3 = ["/images/IMG_5044.jpeg", "/images/IMG_1334.jpeg", ]
-  const img4 = ["/images/IMG_9621.jpeg", "/images/IMG_9754.jpeg", ]
-  const img5 = ["/images/IMG_2777.JPG", "/images/IMG_3044.jpeg", ]
+  //const img1 = ["/images/IMG_8258.jpg", "/images/IMG_2310.jpeg", ]
+  //const img2 = ["/images/20221127-IMG_4907.jpg", "/images/IMG_2135.JPG", ]
+  //const img3 = ["/images/IMG_5044.jpeg", "/images/IMG_1334.jpeg", ]
+  //const img4 = ["/images/IMG_9621.jpeg", "/images/IMG_9754.jpeg", ]
+  //const img5 = ["/images/IMG_2777.JPG", "/images/IMG_3044.jpeg", ]
 
   const img1Interval = 25000 // 60 sec
   const img2Interval = 40000 // 

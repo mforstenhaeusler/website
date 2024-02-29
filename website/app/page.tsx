@@ -200,11 +200,11 @@ const App: React.FC = () => {
     
       <div id="wrapper" className=''>
         <Navbar landingPage={true}/>
-        <main className='flex-auto p-4 text-primary overflow-hidden'> {/* bg-zinc-300 */}
+        <main className='flex-auto p-4 text-primary overflow-hidden' style={{ overflow: "hidden"}}> {/* bg-zinc-300 */}
         {/*<ScrollContainer>
           <ScrollPage style={{ overflow: "", height: "100%", marginBottom: "128px"}} className=''>
   <Animator animation={batch()}>*/}
-          <div className='sm:mx-5 md:mx-10 lg:mx-16 xl:mx-24'>
+          <div className='sm:mx-5 md:mx-10 lg:mx-16 xl:mx-20'>
             <div className="header">
               <div id="overflow" className='h-[100px] flex items-center justify-start'
               style={{
@@ -221,13 +221,7 @@ const App: React.FC = () => {
                 />
               </div>
               <div className="mt-1 p-4 transition ease-in-out delay-15"> 
-                <p className="text-4xl sm:text-6xl font-medium text-primary" 
-                //style={{
-                //  fontSize: '3.25rem',
-                //  lineHeight: '1.25',
-                //  fontWeight: '600',
-                //}}
-                > 
+                <p className="text-4xl sm:text-6xl font-medium text-primary" > 
                   {headerText}
                 </p> 
               </div>
@@ -245,9 +239,9 @@ const App: React.FC = () => {
               <ContactBox className='p-4 flex flex-row justify-start ml:5'></ContactBox>
               </div>
 
-              {/*<div className='overflow-x-hidden'>
+              {<div className='overflow-x-hidden'>
                 <SlantedImages />
-              </div>*/}
+              </div>}
 
               <div className="grid xl:grid-cols-1 2xl:grid-cols-2 gap-8 mb-5 mt-[50px] sm:mt-[100px]">
                 <div className='flex flex-col md:m-auto sm:items-start'> 
@@ -267,10 +261,9 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className='mt-20'>
-                  <ProgrammingSkillsAnimation bigAnimation='false'></ProgrammingSkillsAnimation>
-              </div>
-
+              {<div className='mt-20'>
+                <ProgrammingSkillsAnimation bigAnimation='false'></ProgrammingSkillsAnimation>
+              </div>}
           </div>
               
               

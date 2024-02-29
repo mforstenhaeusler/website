@@ -128,8 +128,10 @@ const SlantedImages: React.FC = () => {
   //console.log(selectedImg1)
 
   return (
-    <div className="mt-16 sm:mt-20 h-[300px] overflow-hidden">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 absolute left-[-150px] right-[-150px]">
+    <div className="mt-16 sm:mt-20 h-[200px] sm:h-[300px] overflow-hidden relative sm:static">
+      <div className='
+      -my-4 flex justify-center gap-5 py-4 sm:gap-8 absolute left-[-150px] right-[-150px]'
+      >
         {selectedImg1.map((image, key) => (
           <div id={image} key={key} className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
             <img 
@@ -210,6 +212,88 @@ const SlantedImages: React.FC = () => {
           </div>
         ))
         }
+      </div>
+      {/*<div className="-my-4 flex justify-center gap-5 py-4 sm:gap-8 absolute left-[-150px] right-[-150px] bg-slate-500">
+        {/*selectedImg1.map((image, key) => (
+          <div id={image} key={key} className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
+            <img 
+              alt={image}
+              loading="eager" 
+              width="3936" 
+              height="2624" 
+              decoding="async" 
+              data-nimg="1"
+              className="slantedImag1 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
+              src={image} 
+              />
+          </div>
+        ))
+        }
+        {selectedImg2.map((image, key) => (
+          <div id={image} key={key} className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+            <img 
+              alt={image} 
+              loading="lazy" 
+              width="3936" 
+              height="2624" 
+              decoding="async" 
+              data-nimg="1"
+              className="slantedImg2 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
+              src={image} 
+              />
+          </div>
+        ))
+        }
+        {selectedImg3.map((image, key) => (
+          <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+            <img 
+              alt={image} 
+              loading="lazy" 
+              width="3936" 
+              height="2624" 
+              decoding="async" 
+              data-nimg="1"
+              className="slantedImg3 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
+              src={image} 
+              />
+          </div>
+        ))
+        }
+        {selectedImg4.map((image, key) => (
+          <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
+            <img 
+              alt={image} 
+              loading="lazy" 
+              width="3936" 
+              height="2624" 
+              decoding="async" 
+              data-nimg="1"
+              className="slantedImages4 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
+              src={image} 
+              />
+          </div>
+        ))
+        }
+        {selectedImg5.map((image, key) => (
+          <div id={image} key={key} className="slantedImages relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+            <img 
+              alt={image} 
+              loading="lazy" 
+              width="3936" 
+              height="2624" 
+              decoding="async" 
+              data-nimg="1"
+              className="slantedImages5 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
+              src={image} 
+              />
+          </div>
+        ))
+        */}
         {/*<div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
         <img 
           alt="" 
@@ -276,9 +360,8 @@ const SlantedImages: React.FC = () => {
             srcSet="IMG_5850.jpeg" 
             style={{color: "transparent"}}
           />
+      </div>}
       </div>*/}
-        
-      </div>
     </div>
   );
 };

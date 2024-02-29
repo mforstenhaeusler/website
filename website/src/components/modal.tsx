@@ -88,7 +88,7 @@ const Modal: React.FC<ModalProps> = ({
                     </div>
                 </a> 
             </div>
-            <div id={modalID} className="hidden duration-500 overflow-y-auto">
+            <div id={modalID} className="hidden duration-500 overflow-hidden">
                 <div id="overlay" className="fixed left-0 top-0 bg-opacity-60 w-screen h-screen bg-zinc-700 flex justify-center items-center backdrop-blur-sm">
                     <div id="modelContent" className="bg-primary rounded-xl shadow-md overflow-hidden 
                     w-[300px] sm:w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]"> 

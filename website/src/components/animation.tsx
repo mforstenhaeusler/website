@@ -84,7 +84,7 @@ const ProgrammingSkillsAnimation: React.FC<ProgrammingSkillsAnimationProps> = ({
                 
                 :
 
-                <div className="animation-container rounded-2xl w-full flex items-center justify-center overflow-hidden"> 
+                <div className="animation-container rounded-2xl w-full flex items-center justify-center overflow-hidden relative"> 
                     <div className="absolute w-[96px] h-[96px] sm:w-[128px] sm:h-[128px] rounded-full bg-primary border-2 border-card flex items-center justify-center"> 
                         <img
                             src="/headshot/IMG_0443.jpeg"

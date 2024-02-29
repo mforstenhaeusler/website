@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({
 
     return (    
         <div className="p-6 rounded-3xl border border-card shadow-md 
-        md:w-[650px] lg:w-[750px] xl:w-[750px] 2xl:w-[550px]
+        w-full md:w-[650px] lg:w-[750px] xl:w-[750px] 2xl:w-[550px]
         ">
           <div className='flex space-x-1 items-center justify-start text-primary p-2'>
             <BriefcaseIcon className="h-6 w-6 mr-2"></BriefcaseIcon>
@@ -45,36 +45,36 @@ const Card: React.FC<CardProps> = ({
                     <IconLink 
                         href={work.link}
                         icon='sap'
-                        className='flex p-1 rounded-full bg-card-company-icon border border-card-company-icon shadow-sm cursor-pointer'
+                        className='p-1 rounded-full bg-card-company-icon border border-card-company-icon shadow-sm cursor-pointer'
                         target="_blank"
                     />
-                    <div className='flex-grow ml-5'>
+                    <div className='flex-grow mx-5'>
                     <p className='text-primary text-base'> {work.company} </p>
                     <p className='text-secondary text-sm'> {work.jobTitle} </p>
                     </div>
                     <div>
-                    <p className='text-secondary text-md'> {work.start} - {work.end} </p>
+                    <p className='text-secondary text-md text-end'> {work.start} - {work.end} </p>
                     </div>
                 </div>
                 :
                 <div id={key} key={key} className='flex flex-row w-full mb-6 items-center'>
                     <IconLink 
                         href={work.link}
-                        className='flex p-1 rounded-full bg-card-company-icon border border-card-company-icon shadow-sm cursor-pointer'
+                        className='p-1 bg-card-company-icon border border-card-company-icon shadow-sm rounded-full cursor-pointer'
                         target="_blank"
                     >
                      <img
                         src={work.imgPath}
                         alt="Round Image"
-                        className="rounded-full w-12 h-12 aspect-[9/10]"
+                        className="rounded-full min-w-12 min-h-12 max-w-12 max-h-12 aspect-[9/10] "
                     />
                     </IconLink>
-                    <div className='flex-grow ml-5'>
+                    <div className='flex-grow mx-5'>
                     <p className='text-primary text-base'> {work.company} </p>
                     <p className='text-secondary text-sm'> {work.jobTitle} </p>
                     </div>
-                    <div>
-                    <p className='text-secondary text-md'> {work.start} - {work.end} </p>
+                    <div className=''>
+                    <p className='text-secondary text-md text-end'> {work.start} - {work.end} </p>
                     </div>
                 </div>
             ))}

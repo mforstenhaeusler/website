@@ -140,7 +140,7 @@ const SlantedImages: React.FC = () => {
               decoding="async" 
               data-nimg="1"
               className="slantedImag1 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
-              sizes="(min-width: 640px) 18rem, 11rem" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
               src={image} 
               />
           </div>
@@ -156,7 +156,7 @@ const SlantedImages: React.FC = () => {
               decoding="async" 
               data-nimg="1"
               className="slantedImg2 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
-              sizes="(min-width: 640px) 18rem, 11rem" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
               src={image} 
               />
           </div>
@@ -172,7 +172,7 @@ const SlantedImages: React.FC = () => {
               decoding="async" 
               data-nimg="1"
               className="slantedImg3 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
-              sizes="(min-width: 640px) 18rem, 11rem" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
               src={image} 
               />
           </div>
@@ -188,7 +188,7 @@ const SlantedImages: React.FC = () => {
               decoding="async" 
               data-nimg="1"
               className="slantedImages4 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
-              sizes="(min-width: 640px) 18rem, 11rem" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
               src={image} 
               />
           </div>
@@ -204,7 +204,7 @@ const SlantedImages: React.FC = () => {
               decoding="async" 
               data-nimg="1"
               className="slantedImages5 absolute inset-0 h-full w-full object-cover animate-fading-ing" 
-              sizes="(min-width: 640px) 18rem, 11rem" 
+              //sizes="(min-width: 640px) 18rem, 11rem" 
               src={image} 
               />
           </div>
@@ -284,56 +284,3 @@ const SlantedImages: React.FC = () => {
 };
 
 export default SlantedImages;
-
-{/* <div className='bg-blue-400 mt-16 sm:mt-20'>
-      <div 
-        className="-my-4 flex justify-center"
-      >
-        <div className="-rotate-2 w-full overflow-hidden relative">
-          <img
-              src="https://placekitten.com/200/200"
-              alt="Round Image"
-              className="rounded-xl 
-              w-[512px] h-[384px]
-              "
-              //sm:w-60 sm:h-60 md:w-60 md:h-60 lg:w-[512px] lg:h-[384px]  
-          />
-        </div>
-        <div className="rotate-2 w-full overflow-hidden relative">
-          <img
-              src="https://placekitten.com/200/200"
-              alt="Round Image"
-              className="rounded-xl 
-              sm:w-60 sm:h-60 md:w-60 md:h-60 lg:w-[512px] lg:h-[384px]"
-          />
-        </div>
-        <div className="rotate-2 w-full overflow-hidden relative">
-          <img
-              src="https://placekitten.com/200/200"
-              alt="Round Image"
-              className="rounded-xl 
-              sm:w-60 sm:h-60 md:w-60 md:h-60 lg:w-[512px] lg:h-[384px]  
-              "
-          />
-        </div>
-        {/*<div className="-rotate-2 w-full overflow-hidden relative">
-          <img
-              src="https://placekitten.com/200/200"
-              alt="Round Image"
-              className="rounded-xl 
-              sm:w-60 sm:h-60 md:w-60 md:h-60 lg:w-[512px] lg:h-[384px] 
-              "
-          />
-        </div>
-        <div className="-rotate-2 w-full overflow-hidden relative">
-          <img
-              src="https://placekitten.com/200/200"
-              alt="Round Image"
-              className="rounded-xl 
-              sm:w-60 sm:h-60 md:w-60 md:h-60 lg:w-[512px] lg:h-[384px]  
-              "
-          />
-  </div>
-      </div>
-          
-        </div> */}

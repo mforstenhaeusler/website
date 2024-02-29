@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ landingPage = true}) => {
                     </a>
                 }
                 </div>
-                <div id="nav-links" className='absolute lg:static lg:top-0 right-10 bg-primary top-[-200px] border border-nav lg:rounded-3xl rounded-xl px-5 py-1'> 
+                <div id="nav-links" className='absolute lg:static lg:top-0 right-[80px] bg-primary top-[-200px] border border-navBorder lg:rounded-3xl rounded-xl px-5 py-1 shadow-sm'> 
                     <ul className='flex flex-col lg:flex-row lg:items-center lg:gap-5 p-1 list-none'>    
                         <li>
                             {pathname === "/about" ? 

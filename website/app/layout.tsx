@@ -28,9 +28,9 @@ export default function RootLayout({
             //disableTransitionOnChange
           >
             <div className="
-            flex flex-col bg-primary 
-            sm:mx-0 md:mx-10 lg:mx-16 2xl:mx-48
-            shadow-lg w-full"
+            flex flex-col bg-primary
+            mx-0 sm:mx-0 md:mx-10 lg:mx-16 2xl:mx-48
+            shadow-lg w-full bg-slate-400"
             >
               {children}
             </div>

@@ -91,21 +91,21 @@ const Modal: React.FC<ModalProps> = ({
             <div id={modalID} className="hidden duration-500 overflow-y-auto">
                 <div id="overlay" className="fixed left-0 top-0 bg-opacity-60 w-screen h-screen bg-zinc-700 flex justify-center items-center backdrop-blur-sm">
                     <div id="modelContent" className="bg-primary rounded-xl shadow-md overflow-hidden 
-                    w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]"> 
+                    w-[300px] sm:w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]"> 
                         <div id="modalImg" className="w-full"> 
-                            <div className="absolute flex items-end justify-end p-2 w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]">
+                            <div className="absolute flex items-end justify-end p-2 w-[300px] sm:w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]">
                                 <button id="modelClose" className="border-2 border-black rounded-full text-black hover:text-red-700 hover:border-red-700 hover:scale-110 cursor-pointer" onClick={() => closeModal()}>
                                     <XMarkIcon className="h-6 w-6"></XMarkIcon>
                                 </button>
                             </div>
                             <img
                                 src={content.imgPath}
-                                alt="Round Image"
-                                className="sm:h-48 md:h-52 lg:h-56 xl:h-60 2xl:h-64 aspect-[3/4] w-full object-cover"
+                                alt="Cover Image"
+                                className="h-24 sm:h-48 md:h-52 lg:h-56 xl:h-60 2xl:h-64 aspect-[3/4] w-full object-cover"
                             />
                             
                         </div>
-                        <div className='overflow content ml-2 p-4 text-secondary sm:min-w-md max-h-[500px]'>
+                        <div className='overflow content ml-2 p-4 text-secondary xs:min-w-sm sm:min-w-md max-h-[600px]'>
                             <div className=" overcardHeader w-full">
                                 <div className='flex border-l-2 text-modal-date h-4 items-center justify-start mt-2'>
                                     <time className='ml-4 text-sm' dateTime=''> {content.date} </time>

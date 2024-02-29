@@ -95,25 +95,40 @@ const About: React.FC = () => {
                 <div className="lg:pl-20">
                   <ul role="list">
                     <li className="my-4">
-                      <a className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer">
+                      <a 
+                        className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer"
+                        href="https://www.linkedin.com/in/maximilian-forstenhaeusler/"
+                        target="_blank"
+                      >
                         <FaLinkedin className="h-6 w-6 flex-none mr-4"></FaLinkedin>
                         Follow on LinkedIn
                       </a>
                     </li>
                     <li className="my-4">
-                      <a className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer">
+                      <a 
+                        className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer"
+                        href="https://github.com/mforstenhaeusler/"
+                        target="_blank"
+                      >
                         <FaGithub className="h-6 w-6 flex-none mr-4"></FaGithub>
                         Follow on Github
                       </a>
                     </li>
                     <li className="my-4">
-                      <a className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer">
+                      <a 
+                        className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer"
+                        href="https://www.instagram.com/max_for32/?hl=en"
+                        target="_blank"
+                      >
                         <FaInstagram className="h-6 w-6 flex-none mr-4"></FaInstagram>
                         Follow on Instagram
                       </a>
                     </li>
                     <li className="mt-8 border-t-[1.5px] border-navBorder pt-8 flex">
-                      <a className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer">
+                      <a 
+                        className="flex flex-row items-center text-secondary text-sm font-medium transition hover:text-hover cursor-pointer"
+                        href="mailto:maxiforstenhaeusler@gmail.com"
+                      >
                         <MdMail className="h-6 w-6 flex-none mr-4"></MdMail>
                         maxiforstenhaeusler@gmail.com
                       </a>

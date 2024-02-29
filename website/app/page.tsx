@@ -29,7 +29,7 @@ const App: React.FC = () => {
     '100%': { opacity: 1 },
   };
 
-  const headerText = "AI enthusiast, ML researcher and amatuer skier ⛷️."
+  const headerText = "AI enthusiast, ML researcher and amatuer skier ⛷️"
   const subHeaderText = "I'm Max, a machine learning reseacher based in Munich 🇩🇪. \
   I currently pursue a PhD at the University of Glasgow 🏴󠁧󠁢󠁳󠁣󠁴󠁿 where I ressearch and develop technologies \
   that aim to ensure privacy in machine learning applications."
@@ -200,7 +200,7 @@ const App: React.FC = () => {
     
       <div id="wrapper" className=''>
         <Navbar landingPage={true}/>
-        <main className='flex-auto p-4 text-primary'> {/* bg-zinc-300 */}
+        <main className='flex-auto p-4 text-primary overflow-hidden'> {/* bg-zinc-300 */}
         {/*<ScrollContainer>
           <ScrollPage style={{ overflow: "", height: "100%", marginBottom: "128px"}} className=''>
   <Animator animation={batch()}>*/}
@@ -221,7 +221,7 @@ const App: React.FC = () => {
                 />
               </div>
               <div className="mt-1 p-4 transition ease-in-out delay-15"> 
-                <p className="text-6xl font-medium text-primary" 
+                <p className="text-4xl sm:text-6xl font-medium text-primary" 
                 //style={{
                 //  fontSize: '3.25rem',
                 //  lineHeight: '1.25',
@@ -232,7 +232,7 @@ const App: React.FC = () => {
                 </p> 
               </div>
               <div className="p-4">
-                <p className="text-1xl text-secondary"
+                <p className="text-base sm:text-1xl text-secondary"
                 style={{
                   fontSize: '1.15rem',
                   lineHeight: '1.5',
@@ -242,14 +242,14 @@ const App: React.FC = () => {
                   {subHeaderText} 
                 </p>
               </div>
-              <ContactBox></ContactBox>
+              <ContactBox className='p-4 flex flex-row justify-start ml:5'></ContactBox>
               </div>
 
-              <div className=''>
+              {/*<div className='overflow-x-hidden'>
                 <SlantedImages />
-              </div>
+              </div>*/}
 
-              <div className="grid xl:grid-cols-1 2xl:grid-cols-2 gap-8 mb-5 mt-[100px]">
+              <div className="grid xl:grid-cols-1 2xl:grid-cols-2 gap-8 mb-5 mt-[50px] sm:mt-[100px]">
                 <div className='flex flex-col md:m-auto sm:items-start'> 
                       {publicationsProjects.map((content, key) => (
                         key === 0 ?

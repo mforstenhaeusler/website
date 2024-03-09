@@ -3,8 +3,8 @@ import { ThemeProvider } from '../src/components/themeProvider';
 import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {
-  title: 'M. Forstenäusler',
-  description: 'M. Forstenäusler - Website',
+  title: 'M. Forstenhäusler',
+  description: 'M. Forstenhäusler - Website',
 }
 
 export default function RootLayout({

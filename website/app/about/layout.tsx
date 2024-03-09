@@ -2,8 +2,8 @@ import Navbar from '../../src/components/navbar';
 import Footer from '../../src/components/footer';
 
 export const metadata = {
-  title: 'M. Forstenäusler',
-  description: 'M. Forstenäusler - Website',
+  title: 'M. Forstenhäusler',
+  description: 'M. Forstenhäusler - Website',
 }
 
 export default function RootLayout({

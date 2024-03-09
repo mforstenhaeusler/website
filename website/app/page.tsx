@@ -31,7 +31,7 @@ const App: React.FC = () => {
 
   const headerText = "AI enthusiast, ML researcher and amatuer skier ⛷️"
   const subHeaderText = "I'm Max, a machine learning reseacher based in Munich 🇩🇪. \
-  I currently pursue a PhD at the University of Glasgow 🏴󠁧󠁢󠁳󠁣󠁴󠁿 where I ressearch and develop technologies \
+  I currently pursue a PhD at the University of Glasgow 🏴󠁧󠁢󠁳󠁣󠁴󠁿 where I research and develop technologies \
   that aim to ensure privacy in machine learning applications."
   
   const cardTitle = "Work Experience"

@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
                 <ContactBox className='p-4 flex flex-row justify-center sm:justify-start sm:ml-5'></ContactBox>
             </div>
             <div>
-                <p className="text-center p-4 text-secondary"> &copy; 2024 Maximilian Forstenhäusler. All rights reserved.</p>
+                <p className="text-center p-4 text-secondary"> &copy; 2025 Maximilian Forstenhäusler. All rights reserved.</p>
             </div>
             </div>
             

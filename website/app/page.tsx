@@ -131,7 +131,7 @@ const App: React.FC = () => {
       key: "modal1",
       conference: "TUM Library"
     },
-    {        
+    /*{        
       imgPath: "/project_images/publication1.png",
       link: "http://casopisi.junis.ni.ac.rs/index.php/FUMechEng/article/view/6927",
       code: "https://github.com/mforstenhaeusler/AFMviscoelastic",
@@ -141,7 +141,7 @@ const App: React.FC = () => {
       date: "April, 2021",
       abstract: "We provide guidelines for modeling linear viscoelastic materials containing an arbitrary number of characteristic times, under atomic force microscopy (AFM) characterization.",
       key: "modal0"
-    },
+    },*/
     {
       imgPath: "/project_images/quantum_SVM.png",
       link: "", 

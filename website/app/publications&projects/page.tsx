@@ -8,6 +8,28 @@ const PublicationsProjects: React.FC = () => {
     const header = "Things I’ve made trying to put my dent in the universe."
     const publications = [
       {
+        imgPath: "/project_images/STaRFormer.png",
+        link: "https://star-former.github.io/",
+        code: "https://github.com/STaR-Former/starformer",
+        title: "STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking for Sequential Data",
+        authors: "Forstenhäusler, M., Külzer, D., Anagnostopoulos, C., Parambath, S., Weber, N.",
+        pdf: "https://neurips.cc/virtual/2025/poster/116860",
+        date: "December, 2025",
+        abstract: "Understanding user intent is essential for situational and context-aware decision-making. Motivated by a real-world scenario, this work addresses intent predictions of smart device users in the vicinity of vehicles by modeling sequential spatiotemporal data. However, in real-world scenarios, environmental factors and sensor limitations can result in non-stationary and irregularly sampled data, posing significant challenges. To address these issues, we propose STaRFormer, a Transformer-based approach that can serve as a universal framework for sequential modeling. STaRFormer utilizes a new dynamic attention-based regional masking scheme combined with a novel semi-supervised contrastive learning paradigm to enhance task-specific latent representations. Comprehensive experiments on 56 datasets varying in types (including non-stationary and irregularly sampled), domains, sequence lengths, training samples, and applications demonstrate the efficacy of STaRFormer. We achieve notable improvements over state-of-the-art approaches.",
+        key: "modal4"
+      },
+      {
+        imgPath: "",
+        link: "https://fedstarl.github.io/",
+        code: "https://github.com/FedSTaRL/fedstarl",
+        title: "Leveraging Federated Learning for Decentralized Semi-Supervised Task-Informed Representation Learning on Sequential Data",
+        authors: "Forstenhäusler, M., Anagnostopoulos, C., Parambath, S., Külzer, D., Weber, N.",
+        pdf: "https://eprints.gla.ac.uk/352003/",
+        date: "July, 2025",
+        abstract: "Over the past decade, advancements in machine learning, particularly large language models like OpenAI’s Chat-GPT, have heightened public awareness about artificial intelligence. The growing awareness has led to increased expectations for intelligent products that enhance user experience, often requiring the collection of substantial amounts of potentially sensitive data. However, data protection legislation such as the EU AI Act or GDPR restricts the collection and storage of sensitive user data in real-world applications, making it difficult for organizations to aggregate large datasets across users or institutions, in addition to substantial transmission costs associated with storing the data in the first place. Federated Learning offers a promising paradigm to address these issues by enabling decentralized learning via data minimization, thereby also re- ducing communication overhead. To evaluate its effectiveness, we explore a real-world sequential classification task to learn the intent of smart device users within confined areas of a vehicle. Utilizing an anonymized real-world dataset sourced from BMW’s car fleet and employing a novel sequential modeling approach, STaRFormer, we analyze two federated learning architectures, cross-device and cross-silo, and assess two federated aggregation algorithms for various baseline models. The results demonstrate that STaRFormer outperforms baseline models in the cross-silo case and delivers competitive results in the cross-device case, highlighting its efficacy in decentralized sequential data modeling.",
+        key: "modal3"
+      },
+      {
         imgPath: "/project_images/thesis.png",
         link: "https://mediatum.ub.tum.de/node?id=1726945",
         code: "",

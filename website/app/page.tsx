@@ -38,9 +38,9 @@ const App: React.FC = () => {
   const cardContent = [
       {
         'company': 'BMW',
-        'jobTitle': 'PhD candidate in AI and Privacy',
-        'start': '03/2024',//'Mar 2024',
-        'end': 'Present',//'Present',
+        'jobTitle': 'PhD candidate in Federated Learning',
+        'start': '03/2024',
+        'end': 'Present',
         'imgPath': "/logos/bmw.svg",
         'link': 'https://www.bmw.com/de/index.html',
       },
@@ -55,8 +55,8 @@ const App: React.FC = () => {
       {
         'company': 'BMW',
         'jobTitle': 'Working Student in Machine Learning',
-        'start': '03/2024',//'Mar 2024',
-        'end': 'Present',//'Present',
+        'start': '03/2024',
+        'end': '10/2022',
         'imgPath': "/logos/bmw.svg",
         'link': 'https://www.bmw.com/de/index.html',
       },

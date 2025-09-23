@@ -25,6 +25,7 @@ module.exports = {
       textColor: {
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
+        third: 'var(--color-text-third)',
         hover: 'var(--color-text-hover)',
         button: {
           filled: 'var(--color-text-button-filled)',

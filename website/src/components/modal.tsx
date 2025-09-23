@@ -19,7 +19,8 @@ const Modal: React.FC<ModalProps> = ({
         pdf: "http://casopisi.junis.ni.ac.rs/index.php/FUMechEng/article/view/6927/3904",
         date: "April, 2021",
         abstract: "We provide guidelines for modeling linear viscoelastic materials containing an arbitrary number of characteristic times, under atomic force microscopy (AFM) characterization.",
-        key: 'model0'
+        key: 'model0',
+        conference: "",
     }
 }) => { 
 
@@ -72,6 +73,9 @@ const Modal: React.FC<ModalProps> = ({
                                     <div className='my-auto'>
                                         <h2 className='text-md font-medium text-primary'>{content.title}</h2>
                                     </div>
+                                    <div className='my-auto'>
+                                        <h3 className='text-md font-normal text-third'>{content.conference}</h3>
+                                    </div>
                                     <div className="cardFooter mt-2 text-modal-link">
                                         <div className='flex flex-cols items-center justify-start text-sm'>
                                             <div>Read Article</div>
@@ -114,6 +118,9 @@ const Modal: React.FC<ModalProps> = ({
                                     <h1 className='text-lg font-medium text-primary'>{content.title}</h1>
                                 </div>
                                 <div className='mt-2'>
+                                    <h2 className='text-lg text-third'>{content.conference}</h2>
+                                </div>
+                                <div className='mt-2'>
                                     <h2 className='text-md text-secondary italic'>{content.authors}</h2>
                                 </div>
                                 <div className='border-t border-navBorder mt-4 mb-2'></div>
@@ -140,7 +147,7 @@ const Modal: React.FC<ModalProps> = ({
                                             <></>
                                             }
                                             {content.pdf !== "" ? 
-                                            <a id="articleLink" href="#" className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
+                                            <a id="articleLink" href={content.pdf} className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
                                                 <p className="text-sm"> Read PDF </p> 
                                                 <DocumentIcon className='h-3 w-3 ml-1'/>
                                             </a>

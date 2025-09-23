@@ -19,7 +19,7 @@ const PublicationsProjects: React.FC = () => {
         key: "modal4"
       },
       {
-        imgPath: "",
+        imgPath: "/project_images/fedstarl.png",
         link: "https://fedstarl.github.io/",
         code: "https://github.com/FedSTaRL/fedstarl",
         title: "Leveraging Federated Learning for Decentralized Semi-Supervised Task-Informed Representation Learning on Sequential Data",

@@ -8,6 +8,18 @@ const PublicationsProjects: React.FC = () => {
     const header = "Things I’ve made trying to put my dent in the universe."
     const publications = [
       {
+        imgPath: "/project_images/lems.png",
+        link: "https://lems-svd.github.io/",
+        code: "https://github.com/lems-svd/lems",
+        title: "Advancing SVD-based LLM Compression via Layer-Wise Error Model Search",
+        authors: "M. Thoma, M. Groezinger, M. Forstenhäusler, E. Aghajanzadeh, M. R. Vemparala, C. Anagnostopoulos, P. Mori, N. Fasfous, A. Frickenstein, D. Mueller-Gritschneder, U. Schlichtmann",
+        pdf: "https://icml.cc/virtual/2026/poster/64908",
+        date: "July, 2026",
+        abstract: "Low-rank SVD-based compression offers a powerful strategy to reduce the computational costs of Large language models (LLMs); however, existing methods commonly encounter two recurring obstacles: (i) global rank allocation, where uncalibrated error proxies fail to account for complex error propagation, and (ii) decomposition quality, where Fisher-based estimators suffer from severe rank collapse. In this work, we address these limitations by presenting Layer-wise Error Modeling Search (LEMS) and KFAC-SVD. LEMS advances rank allocation by introducing a layer-wise error surrogate that integrates both local and global layer importance alongside a propagation bias, allowing us to determine global rank configurations efficiently as an Integer Linear Program (ILP). Simultaneously, KFAC-SVD improves decomposition quality by utilizing token-wise statistics, preventing the rank deficiency observed in prior Fisher-based SVD. We demonstrate across Mistral, Qwen3, and Llama-3 families that KFAC-SVD achieves an average perplexity improvements of 15%, while LEMS consistently outperforms existing search strategies, delivering significant zero-shot accuracy improvements of up to 4.7 p.p. that generalize to scales of 70B parameters. Code is made available in the Supplement.",
+        key: "modal5",
+        conference: "ICML 2026"
+      },
+      {
         imgPath: "/project_images/starformer.png",
         link: "https://star-former.github.io/",
         code: "https://github.com/STaR-Former/starformer",

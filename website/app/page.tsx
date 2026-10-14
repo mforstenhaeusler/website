@@ -29,7 +29,7 @@ const App: React.FC = () => {
     '100%': { opacity: 1 },
   };
 
-  const headerText = "AI enthusiast, ML researcher and amatuer skier ⛷️"
+  const headerText = "AI enthusiast, ML researcher and amateur skier ⛷️"
   const subHeaderText = "I'm Max, a machine learning reseacher based in Munich 🇩🇪. \
   I currently pursue a PhD at the University of Glasgow 🏴󠁧󠁢󠁳󠁣󠁴󠁿 where I research and develop technologies \
   that aim to ensure privacy in machine learning applications."

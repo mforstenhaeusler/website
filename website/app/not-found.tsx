@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import "../globals.css";
 
@@ -6,9 +7,9 @@ const NotFound: React.FC = () => {
         <div>
           <h2>Not Found</h2>
           <p>Could not find requested resource</p>
-          <a href="/">Return Home</a>
+          <Link href="/">Return Home</Link>
         </div>
       )
 }
- 
+
 export default NotFound;

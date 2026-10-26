@@ -11,10 +11,11 @@ interface IconLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>{
 const IconLink: React.FC<IconLinkProps> = ({className="", icon, children, ...props }) => {
     if (icon === 'github'){
         return (
-            <a className={className} {...props}> 
+            <a className={className} {...props}>
                 <svg
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-8 text-secondary hover:text-hover"
+                    className="h-6 w-6 text-secondary hover:text-hover"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                 >
@@ -26,10 +27,11 @@ const IconLink: React.FC<IconLinkProps> = ({className="", icon, children, ...pro
         );
     } if (icon === 'instagram'){
         return (
-            <a className={className} {...props}> 
+            <a className={className} {...props}>
                 <svg
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-8 text-secondary hover:text-hover"
+                    className="h-6 w-6 text-secondary hover:text-hover"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                 >
@@ -39,13 +41,14 @@ const IconLink: React.FC<IconLinkProps> = ({className="", icon, children, ...pro
                 {children}
             </a>
         );
-        
+
     } if (icon === "linked-in"){
         return (
-            <a className={className} {...props}> 
+            <a className={className} {...props}>
                 <svg
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-8 text-secondary hover:text-hover"
+                    className="h-6 w-6 text-secondary hover:text-hover"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                 >
@@ -58,21 +61,21 @@ const IconLink: React.FC<IconLinkProps> = ({className="", icon, children, ...pro
     } if (icon === "email"){
         const classNameExt = `hover:text-hover text-pink-400 ${className}`
         return (
-        <a className={classNameExt} {...props}> 
+        <a className={classNameExt} {...props}>
             <EnvelopeIcon className="h-7 w-7 text-secondary hover:text-hover"></EnvelopeIcon>
             {children}
         </a>
         );
     } if (icon === 'sap'){
         return (
-            <a className={className} {...props}> 
+            <a className={className} {...props}>
                 <SiSap className='h-12 w-12 p-0.5' style={{ color: "#0e9bdf"}}/>
             </a>
         );
     } else {
         return <a className={className} {...props}> {children}</a>
     }
-    
+
     //<a className={className} {...props}> {children} </a>;
 };
 

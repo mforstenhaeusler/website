@@ -1,254 +1,56 @@
-'use client'
-import React, { useEffect, useRef, useState } from 'react';
-import ToggleTheme from "./toggleTheme";
-import {usePathname} from 'next/navigation'; 
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import ToggleTheme from './toggleTheme';
 
-type NavbarProps = {
-  //children: ReactNode;
-  landingPage: boolean;
-};
+export default function Navbar({ landingPage = true }: { landingPage: boolean }) {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const nav = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
 
-const Navbar: React.FC<NavbarProps> = ({ landingPage = true}) => {
-    var positionVar: 'relative' | 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed' | 'undefined';
-    var classNameVar: string; 
+  useEffect(() => {
+    if (!open) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (!nav.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', closeOutside);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeOutside);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open]);
 
-    if (landingPage){
-        positionVar = 'fixed'
-        classNameVar = "flex items-center lg:justify-between justify-end mx-auto\
-        sm:w-[550px] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1150px]"
-        //items-center lg:justify-between sm:justify-end bg-yellow-200\
-    } else {
-        positionVar = 'relative'
-        classNameVar = "flex items-center justify-between\
-        sm:mx-5 md:mx-10 lg:mx-16 xl:mx-24 w-full"
-        //sm:w-[400px] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1150px]" 
-        /* bg-orange-400 */
-    }
-
-    let systemTheme;
-
-    if (typeof window !== 'undefined') {
-    // This code will only run in the browser
-    systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    } else {
-    // Fallback if window is not defined (e.g., during server-side rendering)
-    systemTheme = false; // Or any default value you prefer
-    }
-    //const [mediaWidth, setMediaWidth] = useState(window.innerWidth)
-    //const [textUnderlineOffset, setTextUnderlineOffset] = useState(window.innerWidth)
-    const textUnderlineOffset = '15px'
-
-    const handleDropDown = () => {
-        const navLinks = document.getElementById('nav-links')//document.querySelector('nav-links')
-        
-        try {
-            console.log(navLinks)
-            if (navLinks?.classList.contains('top-[-200px]')){
-                navLinks?.classList.remove('top-[-200px]')
-                navLinks?.classList.add('top-16')
-                
-                
-            } else {
-                navLinks?.classList.remove('top-16')
-                navLinks?.classList.add('top-[-200px]')
-            }
-        } catch {
-            console.log(Error)
-        }
-    }
-    const pathname = usePathname()
-    console.log(pathname)
-
-    const checkScreenWidth = () => {
-        //setMediaWidth(window.innerWidth)
-        const navLink1 = document.getElementById('nav-link1')//document.querySelector('nav-links')
-        const navLink2 = document.getElementById('nav-link2')
-        const navLink3 = document.getElementById('nav-link3')
-
-        if (pathname === "/about"){
-            console.log(navLink1?.classList.contains('underline'))
-            console.log(window.innerWidth)
-            if (navLink1?.classList.contains('underline')){
-                if (window.innerWidth <= 1024){ // medium and small 
-                    navLink1?.classList.remove('underline')
-                }
-            } else {
-                if (navLink1?.classList.contains('underline') === false){
-                    if (window.innerWidth > 1024){ 
-                        navLink1?.classList.add('underline')
-                    }
-                }
-            }
-            console.log('check')
-            console.log(navLink1?.classList)
-        } if (pathname === "/publications&projects"){
-            console.log(navLink2?.classList.contains('underline'))
-            console.log(window.innerWidth)
-            if (navLink2?.classList.contains('underline')){
-                if (window.innerWidth <= 1024){ // medium and small 
-                    navLink2?.classList.remove('underline')
-                }
-            } else {
-                if (navLink2?.classList.contains('underline') === false){
-                    if (window.innerWidth > 1024){ 
-                        navLink2?.classList.add('underline')
-                    }
-                }
-            }
-            console.log('check')
-            console.log(navLink1?.classList)
-        }
-    }
-
-    useEffect(() => {
-        setInterval(checkScreenWidth, 1000);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-    
-
-    return (
-        <header  className="w-full flex items-center justify-center p-5 h-[100px]">
-            <nav id="Navbar" className={classNameVar}
-                style={{
-                    //marginTop: '300px',
-                    position: positionVar,
-                }}
-            >
-                <div id="NavIcon" className='w-12 h-12'>
-                {landingPage ? 
-                    <div className=''> </div>
-                :
-                    <a href="/">
-                        <img
-                            src="/headshot/IMG_0443.jpeg"
-                            alt="Round Image"
-                            className="rounded-full w-12 h-12 object-cover bg-primary p-0.5 border border-nav shadow-sm"
-                        />
-                    </a>
-                }
-                </div>
-                <div id="nav-links" className='absolute lg:static lg:top-0 right-[80px] bg-primary top-[-200px] border border-navBorder lg:rounded-3xl rounded-xl px-5 py-1 shadow-sm'> 
-                    <ul className='flex flex-col lg:flex-row lg:items-center lg:gap-5 p-1 list-none'>    
-                        <li>
-                            {pathname === "/about" ? 
-                                <a id="nav-link1" href={pathname} className="text-lg text-hover underline ml-0 sm:py-1 lg:py-0" 
-                                style={{ 
-                                    textUnderlineOffset: `${textUnderlineOffset}`,
-                                    //background: "linear-gradient(to right, transparent 0%, #f00 50%, transparent 100%)",
-                                }}>
-                                    About
-                                </a>
-                                :
-                                <a id="nav-link1" href="/about" className="text-lg text-primary rounded-lg hover:text-hover sm:py-1 lg:py-0">
-                                    About
-                                </a>
-                            }
-                        </li>
-                        <li>
-                            {pathname === "/publications&projects" ? 
-                                <a id="nav-link2" href={pathname} className="text-lg text-hover underline ml-0 sm:py-1 lg:py-0" 
-                                style={{ 
-                                    textUnderlineOffset: `${textUnderlineOffset}`,
-                                    //background: "linear-gradient(to right, transparent 0%, #f00 50%, transparent 100%)",
-                                }}>
-                                    Projects
-                                </a>
-                                :
-                                <a id="nav-link2" href="/publications&projects" className="text-lg text-primary rounded-lg hover:text-hover sm:py-1 lg:py-0">
-                                    Projects
-                                </a>
-                            }
-                        </li>
-                        {/*<li>
-                        {pathname === "/myjourney" ? 
-                                <a id="nav-link3" href={pathname} className="text-lg text-hover underline ml-0 sm:py-1 lg:py-0" 
-                                style={{ 
-                                    textUnderlineOffset: `${textUnderlineOffset}`,
-                                    //background: "linear-gradient(to right, transparent 0%, #f00 50%, transparent 100%)",
-                                }}>
-                                    My Journey
-                                </a>
-                                :
-                                <a id="nav-link3" href="/publication&projects" className="text-lg text-primary rounded-lg hover:text-hover sm:py-1 lg:py-0">
-                                    My Journey
-                                </a>
-                            }
-                        </li>*/}
-                    </ul>
-                </div>
-                <div className="flex items-center gap-6">
-                    <button 
-                        id="dropdownButton" 
-                        data-dropdown-toggle="dropdown" 
-                        className="text-primary hover:text-hover lg:hidden text-lg text-center inline-flex items-center justify-center bg-nav border border-navBorder rounded-3xl px-5 py-2 cursor-pointer" 
-                        type="button"
-                        onClick={() => handleDropDown()}
-                    >
-                        Menu 
-                        <svg className="w-2 h-2 ms-3 bg-secondary" 
-                            aria-hidden="true" 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            fill="none" 
-                            viewBox="0 0 10 6"
-                        >
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button> 
-                    <ToggleTheme className="ml-3 rounded-3xl text-primary bg-nav border border-navBorder hover:text-hover shadow-sm cursor-pointer" systemTheme={systemTheme}/>
-                </div>
-                
-                
-            </nav>
-        </header>
-    )
-  
+  return (
+    <header className={`${landingPage ? 'sticky top-0 bg-primary' : 'relative'} z-30 px-4 py-5 sm:px-8`}>
+      <nav ref={nav} aria-label="Main navigation" className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-3">
+        {landingPage ? (
+          <span data-portrait-target aria-hidden="true" className="block h-12 w-12 shrink-0" />
+        ) : (
+          <Link href="/" aria-label="Maximilian Forstenhäusler — home" className="shrink-0">
+            <Image unoptimized src="/headshot/IMG_0443.jpeg" alt="" width={48} height={48} className="h-12 w-12 rounded-full border border-navBorder object-cover" />
+          </Link>
+        )}
+        <div id="nav-links" className={`${open ? 'flex' : 'hidden'} absolute right-0 top-full mt-3 min-w-[12rem] flex-col rounded-2xl border border-navBorder bg-primary p-2 shadow-lg lg:static lg:mt-0 lg:flex lg:min-w-0 lg:flex-row lg:rounded-full lg:px-4 lg:shadow-sm`}>
+          {[{ href: '/about', label: 'About' }, { href: '/publications&projects', label: 'Projects' }].map(({ href, label }) => (
+            <Link key={href} href={href} aria-current={pathname === href ? 'page' : undefined} onClick={() => setOpen(false)} className={`flex min-h-11 items-center rounded-lg px-3 text-base hover:text-hover ${pathname === href ? 'text-hover underline underline-offset-4' : 'text-primary'}`}>{label}</Link>
+          ))}
+        </div>
+        <div className="flex items-center gap-3">
+          <button ref={toggle} type="button" aria-expanded={open} aria-controls="nav-links" onClick={() => setOpen(!open)} className="min-h-11 rounded-full border border-navBorder bg-primary px-5 text-primary shadow-sm lg:hidden">Menu <span aria-hidden="true">{open ? '▴' : '▾'}</span></button>
+          <ToggleTheme className="rounded-full border border-navBorder bg-primary text-primary shadow-sm hover:text-hover" />
+        </div>
+      </nav>
+    </header>
+  );
 }
-
-export default Navbar;
-
-{/*
-
-<div id="NavIcon" className='w-12 h-12'>
-{landingPage ? 
-    <div className=''></div>
-:
-    <a href="/">
-        <img
-            src="IMG_0443.jpeg"
-            alt="Round Image"
-            className="rounded-full w-12 h-12 object-cover bg-primary p-0.5 border border-nav shadow-sm"
-        />
-    </a>
-}
-</div>
-
-<div className="md:grow-2 sm:grow-0 text-center space-x-4 sm:p-1 md:p-3 rounded-3xl bg-nav border border-navBorder shadow-sm">
-<button 
-    id="dropdownDefaultButton" 
-    data-dropdown-toggle="dropdown" 
-    className="text-primary hover:text-hover md:hidden text-lg rounded-lg px-3 py-2  text-center inline-flex items-center justify-center" 
-    type="button"
-    onClick={() => handleDropDown()}
->
-    Menu 
-    <svg className="w-2 h-2 ms-3" 
-        aria-hidden="true" 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 10 6"
-    >
-        <path stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
-    </svg>
-</button> 
-{colapse ? 
-    openDropDown && <NavMenuItems dropdown='true'></NavMenuItems>
-:
-<NavMenuItems dropdown='false'></NavMenuItems>
-
-}
-                  
-</div>
-<ToggleTheme className="ml-3 rounded-3xl text-primary bg-nav border border-navBorder hover:text-hover shadow-sm" systemTheme={systemTheme}/>
-
-*/}

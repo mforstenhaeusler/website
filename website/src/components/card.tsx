@@ -1,126 +1,24 @@
-"use client"
-
-import React from 'react';
-import { BriefcaseIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import Button from './button';
-import { useTheme } from 'next-themes';
-import IconLink from './iconLink';
 import Image from 'next/image';
+import { BriefcaseIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
+type WorkExperience = { company: string; jobTitle: string; start: string; end: string; imgPath: string; link: string };
 
-type CardProps = {
-    cardTitle: string;
-    cardContent: Record<string, any>;
-  //children: ReactNode;
-};
-
-const Card: React.FC<CardProps> = ({ 
-    cardTitle = "CardTitle", 
-    cardContent = [
-        {
-            'company': 'BMW',
-            'jobTitle': 'PhD candidate in AI and privacy',
-            'start': '2024',
-            'end': 'Present',
-            'imgPath': '/logos/bmw.svg',
-            'link': 'https://www.bmw.com/de/index.html',
-        }
-    ]
-}) => {
-
-    const { theme, setTheme } = useTheme();
-
-    return (    
-        <div className="p-6 rounded-3xl border border-card shadow-md 
-        w-full md:w-[650px] lg:w-[750px] xl:w-[750px] 2xl:w-[550px]
-        ">
-          <div className='flex space-x-1 items-center justify-start text-primary p-2'>
-            <BriefcaseIcon className="h-6 w-6 mr-2"></BriefcaseIcon>
-            <p className="font-medium text-lg"> {cardTitle} </p>
-          </div>
-          <div className='flex flex-col p-2 mt-5'>
-            {cardContent.map((work: any, key: any) => (
-                work.company === "SAP" ? 
-                <div id={key} key={key} className='flex flex-row w-full mb-6 items-center'>
-                    <IconLink 
-                        href={work.link}
-                        icon='sap'
-                        className='p-1 rounded-full bg-card-company-icon border border-card-company-icon shadow-sm cursor-pointer'
-                        target="_blank"
-                    />
-                    <div className='flex-grow mx-5'>
-                    <p className='text-primary text-base'> {work.company} </p>
-                    <p className='text-secondary text-sm'> {work.jobTitle} </p>
-                    </div>
-                    <div>
-                    <p className='text-secondary text-md text-end'> {work.start} - {work.end} </p>
-                    </div>
-                </div>
-                :
-                <div id={key} key={key} className='flex flex-row w-full mb-6 items-center'>
-                    <IconLink 
-                        href={work.link}
-                        className='p-1 bg-card-company-icon border border-card-company-icon shadow-sm rounded-full cursor-pointer'
-                        target="_blank"
-                    >
-                     <img
-                        src={work.imgPath}
-                        alt="Round Image"
-                        className="rounded-full min-w-12 min-h-12 max-w-12 max-h-12 aspect-[9/10] "
-                    />
-                    </IconLink>
-                    <div className='flex-grow mx-5'>
-                    <p className='text-primary text-base'> {work.company} </p>
-                    <p className='text-secondary text-sm'> {work.jobTitle} </p>
-                    </div>
-                    <div className=''>
-                    <p className='text-secondary text-md text-end'> {work.start} - {work.end} </p>
-                    </div>
-                </div>
-            ))}
-            
-            
-          </div>
-          <div className='text-primary p-2'>
-            {
-                theme === 'light' ? 
-                <Button variant="filled" className='rounded-md w-full p-2 mb-2 cursor-pointer' type="button" href="https://drive.google.com/file/d/164LuoyglZpuVC9I8eu_ulqxDKQ-KaPpG/view?usp=sharing" target="_blank"> 
-                    <div className="flex space-x-3 items-center justify-center">
-                        <p>Download CV </p>
-                        <ArrowDownTrayIcon className="h-5 w-5 animate-bounce"></ArrowDownTrayIcon>
-                    </div>
-                </Button>
-                :
-                <Button variant="inverted" className='rounded-md w-full p-2 mb-2 cursor-pointer' type="button" href="https://drive.google.com/file/d/164LuoyglZpuVC9I8eu_ulqxDKQ-KaPpG/view?usp=sharing" target="_blank"> 
-                    <div className="flex space-x-3 items-center justify-center">
-                        <p>Download CV </p>
-                        <ArrowDownTrayIcon className="h-5 w-5 animate-bounce"></ArrowDownTrayIcon>
-                    </div>
-                </Button>
-            }
-            {/*<Button variant="filled" className='rounded-md w-full p-2 mb-2' type="button"> 
-                <div className="flex space-x-3 items-center justify-center">
-                    <p className=''>Download CV </p>
-                    <ArrowDownTrayIcon className="h-5 w-5 animate-bounce"></ArrowDownTrayIcon>
-                </div>
-        </Button>*/}
-            {/*<Button variant="outlined" className='rounded-md w-full p-2 mb-2' type="button"> 
-                <div className="flex space-x-3 items-center justify-center">
-                    <p>Download CV </p>
-                    <ArrowDownTrayIcon className="h-5 w-5"></ArrowDownTrayIcon>
-                </div>
-            </Button>
-            <Button variant="inverted" className='rounded-md w-full p-2 mb-2' type="button"> 
-                <div className="flex space-x-3 items-center justify-center">
-                    <p>Download CV </p>
-                    <ArrowDownTrayIcon className="h-5 w-5"></ArrowDownTrayIcon>
-                </div>
-    </Button>*/}
-          </div>
-          
-        </div>
-    )
-  
+export default function Card({ cardTitle, cardContent }: { cardTitle: string; cardContent: WorkExperience[] }) {
+  return (
+    <section aria-label={cardTitle} className="w-full min-w-0 rounded-3xl border border-card p-4 shadow-md sm:p-6">
+      <h2 className="flex items-center gap-3 text-lg font-medium text-primary"><BriefcaseIcon aria-hidden="true" className="h-6 w-6 shrink-0" />{cardTitle}</h2>
+      <ul className="mt-6 space-y-6">
+        {cardContent.map((work, index) => (
+          <li key={`${work.company}-${index}`} className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-x-3 gap-y-1">
+            <a href={work.link} target="_blank" rel="noopener noreferrer" aria-label={work.company} className="row-span-2 rounded-full border border-card-company-icon bg-card-company-icon p-1 shadow-sm">
+              <Image unoptimized src={work.imgPath} alt="" width={40} height={40} className="h-10 w-10 rounded-full object-contain" />
+            </a>
+            <div className="min-w-0"><p className="text-base text-primary">{work.company}</p><p className="text-sm leading-relaxed text-secondary">{work.jobTitle}</p></div>
+            <p className="text-sm text-secondary">{work.start} – {work.end}</p>
+          </li>
+        ))}
+      </ul>
+      <a href="https://drive.google.com/file/d/164LuoyglZpuVC9I8eu_ulqxDKQ-KaPpG/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="mt-6 flex min-h-11 items-center justify-center gap-3 rounded-lg bg-button-filled px-4 py-2 text-button-filled hover:bg-button-filled-hover">View CV <ArrowDownTrayIcon aria-hidden="true" className="h-5 w-5" /></a>
+    </section>
+  );
 }
-
-export default Card;

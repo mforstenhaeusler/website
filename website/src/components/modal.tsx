@@ -1,170 +1,71 @@
-"use client"
-import React, {useState} from 'react';
-import { XMarkIcon, LinkIcon, DocumentIcon } from "@heroicons/react/24/solid";
+'use client';
+
+import { useEffect, useId, useRef } from 'react';
 import Image from 'next/image';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
-
-type ModalProps = {
-    content: Record<string, any>;
+export type Article = {
+  imgPath: string;
+  title: string;
+  authors: string;
+  date: string;
+  abstract: string;
+  link?: string;
+  code?: string;
+  pdf?: string;
+  conference?: string;
 };
 
+export default function Modal({ content }: { content: Article }) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const previousOverflow = useRef<string | null>(null);
 
-const Modal: React.FC<ModalProps> = ({ 
-    content = {
-        imgPath: "https://placekitten.com/200/200",
-        link: "http://casopisi.junis.ni.ac.rs/index.php/FUMechEng/article/view/6927",
-        code: "https://github.com/mforstenhaeusler/AFMviscoelastic",
-        title: "Guidlines to simulate linear viscoelastic materials with an arbitarty number of characteristic times in the context of atomicforce microscopy",
-        authors: "Maximilian Forstenhäusler, Enrique A. López-Guerra, Santiago D. Solares",
-        pdf: "http://casopisi.junis.ni.ac.rs/index.php/FUMechEng/article/view/6927/3904",
-        date: "April, 2021",
-        abstract: "We provide guidelines for modeling linear viscoelastic materials containing an arbitrary number of characteristic times, under atomic force microscopy (AFM) characterization.",
-        key: 'model0',
-        conference: "",
-    }
-}) => { 
+  useEffect(() => () => {
+    if (previousOverflow.current !== null) document.body.style.overflow = previousOverflow.current;
+  }, []);
 
-    const [modalID, setModalID] = useState('')
-    
-    
-    function showModal() {
-        setModalID(content.key)
-        console.log('modalID')
-        console.log(modalID)
-        
-        let modal = document.getElementById(modalID);
-        modal?.classList.remove('hidden')
-        modal?.classList.add('bg-opacity-100')
-        console.log(modal)
-        let body = document.getElementById('body');
-        body?.classList.add('overflow-y-hidden');
+  const open = () => {
+    previousOverflow.current = document.body.style.overflow;
+    dialog.current?.showModal();
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => dialog.current?.close();
 
-    }
-    console.log(modalID)
-
-    function closeModal() {
-        let modal = document.getElementById(modalID);
-        modal?.classList.add('hidden')
-        modal?.classList.add('bg-opacity-60')
-        let body = document.getElementById('body');
-        body?.classList.remove('overflow-y-hidden');
-
-    }
-
-    return (
-        <div id="Modal">
-            <div className="cardArticle max-w-md md:max-w-3xl rounded-2xl bg-modal-primary hover:bg-modal-hover w-full\
-            transition ease-in-out duration-200 cursor-pointer">
-                <a id="openModal" className='' onClick={() => showModal()}>
-                    <div className='rounded-xl overflow-hidden'>
-                        <div className="lg:flex">
-                            <div className='img lg:shrink-0 hidden lg:block'>
-                                <img
-                                    src={content.imgPath}
-                                    alt="Round Image"
-                                    className="h-48 sm:h-40 aspect-[9/10] w-full object-cover md:h-full md:w-32"
-                                />
-                            </div>
-                            <div className='content ml-2 p-4 text-secondary sm:min-w-md'>
-                                <div className="cardHeader w-full flex flex-col items-start justify-start h-full lg:h-24">
-                                    <div className='flex mb-2 border-l-2 border-modal-date h-4 items-center justify-start'>
-                                        <time className='ml-4 text-sm text-modal-date' dateTime=''> {content.date}</time>
-                                    </div>
-                                    <div className='my-auto'>
-                                        <h2 className='text-md font-medium text-primary'>{content.title}</h2>
-                                    </div>
-                                    <div className='my-auto'>
-                                        <h3 className='text-md font-normal text-third'>{content.conference}</h3>
-                                    </div>
-                                    <div className="cardFooter mt-2 text-modal-link">
-                                        <div className='flex flex-cols items-center justify-start text-sm'>
-                                            <div>Read Article</div>
-                                            <div>
-                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 strokeLinecap">
-                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                                </svg> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            <div id={modalID} className="hidden duration-500 overflow-hidden">
-                <div id="overlay" className="fixed left-0 top-0 bg-opacity-60 w-screen h-screen bg-zinc-700 flex justify-center items-center backdrop-blur-sm">
-                    <div id="modelContent" className="bg-primary rounded-xl shadow-md overflow-hidden 
-                    w-[300px] sm:w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]"> 
-                        <div id="modalImg" className="w-full"> 
-                            <div className="absolute flex items-end justify-end p-2 w-[300px] sm:w-[500px] md:w-[650px] lg:w-[750px] xl:w-[850px] 2xl:w-[950px]">
-                                <button id="modelClose" className="border-2 border-black rounded-full text-black hover:text-red-700 hover:border-red-700 hover:scale-110 cursor-pointer" onClick={() => closeModal()}>
-                                    <XMarkIcon className="h-6 w-6"></XMarkIcon>
-                                </button>
-                            </div>
-                            <img
-                                src={content.imgPath}
-                                alt="Cover Image"
-                                className="h-24 sm:h-48 md:h-52 lg:h-56 xl:h-60 2xl:h-64 aspect-[3/4] w-full object-cover"
-                            />
-                            
-                        </div>
-                        <div className='overflow content ml-2 p-4 text-secondary xs:min-w-sm sm:min-w-md max-h-[600px]'>
-                            <div className=" overcardHeader w-full">
-                                <div className='flex border-l-2 text-modal-date h-4 items-center justify-start mt-2'>
-                                    <time className='ml-4 text-sm' dateTime=''> {content.date} </time>
-                                </div>
-                                <div className='mt-2'>
-                                    <h1 className='text-lg font-medium text-primary'>{content.title}</h1>
-                                </div>
-                                <div className='mt-2'>
-                                    <h2 className='text-lg text-third'>{content.conference}</h2>
-                                </div>
-                                <div className='mt-2'>
-                                    <h2 className='text-md text-secondary italic'>{content.authors}</h2>
-                                </div>
-                                <div className='border-t border-navBorder mt-4 mb-2'></div>
-                                <div className='overflowContent overflow-y-auto hover:overflow-scroll max-h-[350px]'> 
-                                    <div className='text-md font-light text-secondary mt-2'>{content.abstract}</div>
-                                    <div className="cardFooter mt-4 text-modal-link items-center">
-                                        <div className='flex flex-cols items-center justify-start space-x-5'>
-                                            {content.link !== "" ?  
-                                            <a id="articleLink" href={content.link} className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
-                                                <p className="text-sm"> Full Article </p> 
-                                                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 strokeLinecap">
-                                                    <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                                </svg> 
-                                            </a>
-                                            :
-                                            <></>
-                                            }
-                                            {content.code !== "" ? 
-                                            <a id="articleLink" href={content.code} className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
-                                                <LinkIcon className='h-3 w-3'> </LinkIcon>
-                                                <p className="text-sm ml-1"> Code </p> 
-                                            </a>
-                                            :
-                                            <></>
-                                            }
-                                            {content.pdf !== "" ? 
-                                            <a id="articleLink" href={content.pdf} className="flex flex-cols items-center justify-start hover:text-modal-link-hover cursor-pointer" target="_blank">
-                                                <p className="text-sm"> Read PDF </p> 
-                                                <DocumentIcon className='h-3 w-3 ml-1'/>
-                                            </a>
-                                            :
-                                            <></>
-                                            }  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <article className="w-full min-w-0 max-w-3xl">
+      <button type="button" onClick={open} aria-haspopup="dialog" className="group w-full overflow-hidden rounded-2xl bg-modal-primary text-left transition-colors hover:bg-modal-hover">
+        <div className="flex items-stretch">
+          <Image unoptimized src={content.imgPath} alt="" width={128} height={160} className="hidden w-32 shrink-0 bg-white object-contain p-2 lg:block" />
+          <div className="min-w-0 p-4 sm:p-5">
+            <p className="mb-3 border-l-2 border-modal-date pl-3 text-sm text-modal-date">{content.date}</p>
+            <h2 className="font-medium leading-relaxed text-primary">{content.title}</h2>
+            {content.conference && <p className="mt-1 text-third">{content.conference}</p>}
+            <p className="mt-3 text-sm text-modal-link">Read article <span aria-hidden="true">→</span></p>
+          </div>
         </div>
-        
-    )
-};
-
-export default Modal;
+      </button>
+      <dialog ref={dialog} aria-labelledby={titleId} onClose={() => { document.body.style.overflow = previousOverflow.current ?? ''; previousOverflow.current = null; }} onClick={event => { if (event.target === event.currentTarget) close(); }} className="article-dialog rounded-2xl bg-primary p-0 text-primary shadow-xl">
+        <div className="flex max-h-[inherit] flex-col">
+          <div className="flex shrink-0 items-center justify-between gap-4 border-b border-navBorder px-4 py-2 sm:px-6">
+            <p className="text-sm text-secondary">Article details</p>
+            <button type="button" autoFocus onClick={close} aria-label="Close article" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full hover:bg-modal-hover"><XMarkIcon aria-hidden="true" className="h-6 w-6" /></button>
+          </div>
+          <div className="min-h-0 overflow-y-auto overscroll-contain">
+            <Image unoptimized src={content.imgPath} alt={`Illustration for ${content.title}`} width={960} height={320} className="max-h-48 w-full bg-secondary object-contain sm:max-h-64" />
+            <div className="p-4 sm:p-6">
+              <p className="text-sm text-secondary">{content.date}</p>
+              <h2 id={titleId} className="mt-3 text-xl font-semibold leading-snug sm:text-2xl">{content.title}</h2>
+              {content.conference && <p className="mt-2 text-third">{content.conference}</p>}
+              <p className="mt-3 text-sm italic text-secondary">{content.authors}</p>
+              <p className="mt-5 border-t border-navBorder pt-5 leading-relaxed text-secondary">{content.abstract}</p>
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-modal-link">
+                {[['Full article', content.link], ['PDF', content.pdf], ['Code', content.code]].map(([label, href]) => href && <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-modal-link-hover">{label} <span aria-hidden="true" className="ml-1">↗</span></a>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </article>
+  );
+}

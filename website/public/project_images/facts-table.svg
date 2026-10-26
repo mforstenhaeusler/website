@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+  <title id="title">Fisher approximation comparison</title>
+  <desc id="desc">Figure 1(c) from Mind the Approximation. The research gap combines token-local aggregation with activation-gradient coupling.</desc>
+  <rect width="1000" height="390" fill="white"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="25" fill="#111">
+    <path d="M25 35H975 M25 126H975 M25 343H975" stroke="#111" stroke-width="2"/>
+    <text x="40" y="90">Approach</text>
+    <g text-anchor="middle">
+      <text x="390" y="72">token-local</text><text x="390" y="105">aggregation</text>
+      <text x="635" y="72">act-grad</text><text x="635" y="105">coupling</text>
+      <text x="815" y="90">cos-sim</text><text x="935" y="90">top-1</text>
+    </g>
+    <rect x="26" y="288" width="948" height="53" fill="#f0f0f0"/>
+    <text x="40" y="165">Shampoo<tspan baseline-shift="super" font-size="17">2</tspan></text>
+    <text x="40" y="220">KFAC-red.</text>
+    <text x="40" y="275">KFAC-exp.</text>
+    <text x="40" y="330">Research gap</text>
+    <g text-anchor="middle">
+      <text x="815" y="165">0.17</text><text x="935" y="165">77.2</text>
+      <text x="815" y="220">0.13</text><text x="935" y="220">67.0</text>
+      <text x="815" y="275">0.12</text><text x="935" y="275">75.9</text>
+      <text x="815" y="330">–</text><text x="935" y="330">–</text>
+    </g>
+  </g>
+  <!-- Draw marks as paths so their appearance does not depend on installed fonts. -->
+  <g fill="none" stroke="#b42318" stroke-width="4" stroke-linecap="round">
+    <path d="M382 146l16 16m0-16l-16 16 M382 201l16 16m0-16l-16 16 M627 201l16 16m0-16l-16 16 M627 256l16 16m0-16l-16 16"/>
+  </g>
+  <g fill="none" stroke="#16803c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M624 154l8 8 15-20 M379 264l8 8 15-20 M379 319l8 8 15-20 M624 319l8 8 15-20"/>
+  </g>
+</svg>

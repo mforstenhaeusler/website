@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal website
 
-## Getting Started
+Next.js 16 / React 19 / TypeScript / Tailwind CSS 3, exported as static files. Use Node.js 22 or newer (Next.js requires at least 20.9).
 
-First, run the development server:
+Run these commands from this directory:
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Development: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build and preview
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```sh
+npm run build
+npm run preview
+```
 
-## Learn More
+The production files are in `out/`. The local preview is http://127.0.0.1:3080. `npm start` also starts this static preview; a Next.js production server is not needed.
 
-To learn more about Next.js, take a look at the following resources:
+Deploy the contents of `out/`, including `_next/`, HTML files, route data, and public assets. Your static host must serve `/about` from `about.html` and `/publications&projects` from `publications&projects.html`. The repository-root `index.html` is an unrelated historical placeholder. Keep the current public route names when deploying; rename them only with redirects.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Validation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+npm run lint
+npm run typecheck
+npm run build
+npm run test:e2e
+npm audit
+```
 
-## Deploy on Vercel
+Browser tests use installed Google Chrome by default. For a machine without Chrome:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npx playwright install chromium
+PLAYWRIGHT_CHANNEL=chromium npm run test:e2e
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Build before testing. Playwright starts and stops the static preview automatically. Tests cover all three routes at seven widths, article dialogs, menu navigation and dismissal, saved/system themes, reduced motion, runtime errors, and image loading. Screenshots are written under `test-results/screenshots/` for 375px and 1440px viewports. Traces are retained on failure.
+
+## Content and images
+
+- `src/data/articles.ts`: shared publication and project records.
+- `app/page.tsx`: introduction and work experience.
+- `app/about/page.tsx`: biography.
+- `src/data/photos.ts`: original gallery photo groups, rotations, and timing.
+- `globals.css`: theme variables; `tailwind.config.js`: the single Tailwind configuration.
+
+Run `npm run images` after adding or changing source photographs. It writes 360px and 720px WebP variants into `public/images/optimized/`. Add a new photograph’s filename stem to a group in `src/data/photos.ts` to include it in the rotating strip. The oversized strip intentionally extends beyond the text column and is cropped at the page edges, using the original image sizes and rotation intervals. Rotation pauses for reduced motion and hidden tabs; timers are cleaned up on unmount. Originals remain untouched. Commit generated assets so normal builds require no image processing. These responsive assets work with static hosting; other `next/image` instances explicitly use `unoptimized` because no image optimization server exists in an exported site.
+
+`next-themes` controls the `data-theme` attribute. Match new dark styles to that attribute; do not add a second class or local-storage theme implementation.
+
+## Maintenance
+
+The lockfile includes compatible dependency updates. Temporary overrides update the old brace-expansion 1.x dependency and Tailwind 3’s selector parser to patched versions. The production build and browser tests pass with these overrides; reassess them when upgrading ESLint or migrating Tailwind to version 4.
+
+Google Tag Manager retains the existing container ID. Check its tags and desired loading/consent behavior in the deployed environment. This repository does not expose that remote configuration.
+
+The FACTS publication uses the author list, September 2026 preprint date, and a summary of [arXiv:2609.07155](https://arxiv.org/abs/2609.07155). The [official code repository](https://github.com/MoritzTho/FACTS) identifies the venue as BMVC 2026. `public/project_images/facts-table.svg` redraws the checkmark comparison table in Figure 1(c), preserving its labels and values. Featured publications retain the full list’s newest-first order: BMVC 2026, ICML 2026, then NeurIPS 2025.

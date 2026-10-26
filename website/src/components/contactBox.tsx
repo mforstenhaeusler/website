@@ -7,18 +7,18 @@ type ContactBoxProps = {
 
 const ContactBox: React.FC<ContactBoxProps> = ({className=""}) => {
     return (
-        <div className={className}> 
+        <div className={className}>
             {/*<!-- Linkedin -->*/}
-            <IconLink icon="linked-in" href="https://www.linkedin.com/in/maximilian-forstenhaeusler/" className="mr-2 " target="_blank"></IconLink>
+            <IconLink aria-label="LinkedIn" icon="linked-in" href="https://www.linkedin.com/in/maximilian-forstenhaeusler/" className="inline-flex h-11 w-11 items-center justify-center" target="_blank" rel="noopener noreferrer"></IconLink>
 
             {/*<!-- Github -->*/}
-            <IconLink icon="github" href="https://github.com/mforstenhaeusler/" className="mr-2" target="_blank"/>
-                        
+            <IconLink aria-label="GitHub" icon="github" href="https://github.com/mforstenhaeusler/" className="inline-flex h-11 w-11 items-center justify-center" target="_blank" rel="noopener noreferrer"/>
+
             {/*<!-- Instagram -->*/}
-            <IconLink icon="instagram" href="https://www.instagram.com/max_for32/?hl=en" className="mr-2" target="_blank"/>
+            <IconLink aria-label="Instagram" icon="instagram" href="https://www.instagram.com/max_for32/?hl=en" className="inline-flex h-11 w-11 items-center justify-center" target="_blank" rel="noopener noreferrer"/>
 
             {/*<!-- Email -->*/}
-            <IconLink icon="email" className="hover:text-hover" href="mailto:maxiforstenhaeusler@gmail.com"></IconLink>
+            <IconLink aria-label="Email Max" icon="email" className="inline-flex h-11 w-11 items-center justify-center hover:text-hover" href="mailto:maxiforstenhaeusler@gmail.com"></IconLink>
         </div>
     )
 };

@@ -5,13 +5,13 @@ module.exports = {
     //"./pages/**/*.{js,ts,jsx,tsx,mdx}",
     //"./components/**/*.{js,ts,jsx,tsx,mdx}",
     //"./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/about/**/*.{js,ts,jsx,tsx,mdx}",
     //"!./node_modules",
   ],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     screens: {
       'xs': '512px',
